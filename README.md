@@ -1,61 +1,93 @@
-# Kaiadmin Lite - Free Bootstrap 5 Admin Dashboard
-![kaiadminlitethumb (1)](https://github.com/Hizrian/kaiadmin-lite/assets/10692084/4793c6b9-7991-4502-8633-14d9ed0ea486)
+# Proyecto TP1 Dashboard de resultados del Modelo predictivo
+## Código de proyecto: PRY20241034
 
-This time, I want to introduce you Kaiadmin Lite – a free Bootstrap 5 Admin Dashboard built to easily manage and visualize business data.
+### Estudiantes:
+- Nadia Lorena Tinoco Ricapa (U202012868)
+- Angélica María Lira Pacheco (U201920059)
+Este proyecto es una aplicación web que permite subir y visualizar datos a partir de archivos CSV, y muestra dashboards basados en los resultados de un modelo predictivo. La aplicación ofrece una interfaz amigable para la visualización de datos y está dividida en varias secciones principales.
 
-With Kaiadmin Lite, you can complete development faster with no design skills required. Save 1000s of hours of designing and coding work, as we've already done that for you.
+## Descripción del Proyecto
 
-Don't worry about getting started – we've documented how to get started using this dashboard template and utilizing the available components and plugins, making it easy to leverage the full potential of Kaiadmin Bootstrap 5 Admin Dashboard.
+El proyecto consiste en una aplicación web que permite a los usuarios:
 
-**Product Detail** : https://themekita.com/kaiadmin-lite-bootstrap-5-dashboard.html
+1. **Visualizar el contenido de un archivo CSV resultante del modelo en una tabla**.
+2. **Visualizar un dashboard con los resultados del modelo predictivo aplicado a datos de entrenamiento**.
+3. **Visualizar un dashboard con los resultados del modelo predictivo aplicado a datos de validación**.
+4. **Ver información de presentación de la empresa en la sección "Nosotros"**.
+5. **Subir y filtrar datos de productos desde un archivo `products.csv` en la sección "Productos"**.
 
-**Live Preview** : https://themekita.com/demo-kaiadmin-lite-bootstrap-dashboard/livepreview/demo1/
+## Tecnologías y Librerías Utilizadas
 
-# Get Kaiadmin PRO
+- **HTML5**: Estructura de las páginas web.
+- **CSS3**: Estilos de las páginas web.
+- **JavaScript**: Lógica de la aplicación.
+- **jQuery**: Biblioteca JavaScript para facilitar la manipulación del DOM y las peticiones AJAX.
+- **DataTables**: Plugin de jQuery para crear tablas interactivas.
+- **PapaParse**: Biblioteca para parsear archivos CSV en JavaScript.
+- **Bootstrap**: Framework CSS para diseño responsivo y componentes UI.
 
-![bg_themekitacom](https://github.com/Hizrian/kaiadmin-lite/assets/10692084/195bfcb3-f587-4920-bfba-a583244116ad)
-[Product Detail](https://themekita.com/demo-kaiadmin-pro-bootstrap-dashboard/) |  [Buy This](https://themekita.lemonsqueezy.com/buy/526b603e-8eb3-4dcb-a7a3-842375952df5)
+## Estructura del Proyecto
 
-***
-### [Kaiadmin - Classic Dashboard](https://themekita.com/demo-kaiadmin-pro-bootstrap-dashboard/livepreview/examples/demo1/)
-![Kaiadmin - Classic Dashboard](https://github.com/Hizrian/kaiadmin-lite/assets/10692084/106e027a-4ffe-4856-b729-0e6939c0473d)
-
-***
-### [Kaiadmin - White Classic Dashboard](https://themekita.com/demo-kaiadmin-pro-bootstrap-dashboard/livepreview/examples/demo2/)
-![Kaiadmin - White Classic Dashboard](https://github.com/Hizrian/kaiadmin-lite/assets/10692084/ab70a0f7-116d-46ad-9037-a4081b0db763)
-
-***
-### [Kaiadmin - Dark Dashboard](https://themekita.com/demo-kaiadmin-pro-bootstrap-dashboard/livepreview/examples/demo3/)
-![Kaiadmin - Dark Dashboard](https://github.com/Hizrian/kaiadmin-lite/assets/10692084/1a645dc4-d150-45d7-9883-1955b0666d18)
-
-***
-### [Kaiadmin - Creative Dashboard](https://themekita.com/demo-kaiadmin-pro-bootstrap-dashboard/livepreview/examples/demo4/)
-![Kaiadmin - Creative Dashboard](https://github.com/Hizrian/kaiadmin-lite/assets/10692084/fccc0204-3cb7-45dd-b0a5-532c57af3c12)
-
-***
-### [Kaiadmin - Trendy Dashboard](https://themekita.com/demo-kaiadmin-pro-bootstrap-dashboard/livepreview/examples/demo5/)
-![Kaiadmin - Trendy Dashboard](https://github.com/Hizrian/kaiadmin-lite/assets/10692084/bd9d4ce8-08a3-48bd-975e-3d77e5c51388)
-
-***
-### [Kaiadmin - Trendy 2 Dashboard](https://themekita.com/demo-kaiadmin-pro-bootstrap-dashboard/livepreview/examples/demo6/)
-![Kaiadmin - Trendy 2 Dashboard](https://github.com/Hizrian/kaiadmin-lite/assets/10692084/3cdd531f-16e0-4c4e-bfbd-89f80d3a25fe)
-
-***
-### [Kaiadmin - Horizontal Dashboard](https://themekita.com/demo-kaiadmin-pro-bootstrap-dashboard/livepreview/examples/demo7/)
-![Kaiadmin - Horizontal Dashboard](https://github.com/Hizrian/kaiadmin-lite/assets/10692084/2cac93cc-2542-43d9-9072-8625bdd2f8ad)
-
-***
-### [Kaiadmin - Enterprise Dashboard](https://themekita.com/demo-kaiadmin-pro-bootstrap-dashboard/livepreview/examples/demo8/)
-![Kaiadmin - Enterprise Dashboard](https://github.com/Hizrian/kaiadmin-lite/assets/10692084/ce2aa3f8-1f62-4ca1-87cd-111b74e50940)
-
-***
-### [Kaiadmin - Futuristic Dashboard](https://themekita.com/demo-kaiadmin-pro-bootstrap-dashboard/livepreview/examples/demo9/)
-![Kaiadmin - Futuristic Dashboard](https://github.com/Hizrian/kaiadmin-lite/assets/10692084/83f79f3d-d248-4d01-ac15-9c98bee3ca9f)
+.
+├── assets/
+│   ├── css/
+│   ├── js/
+│   └── images/
+├── components/
+│   ├── header.html
+│   ├── footer.html
+│   └── sidebar.html
+├── data/
+│   ├── products.csv
+│   ├── Resultado_modelo_train.csv
+│   └── Resultado_modelo_val.csv
+├── 404.html
+├── dashboard.html
+├── dashboard2.html
+├── files.html
+├── index.html
+├── nosotros.html
+├── productos.html
+├── app.js
 
 
+## Uso
+
+### Página Principal
+
+Al iniciar la aplicación, se muestra la página principal (`index.html`). Aquí puedes navegar a las diferentes secciones del proyecto.
+
+### Subir y Visualizar CSV
+
+1. Abre `files.html` en tu navegador web.
+2. Selecciona un archivo CSV y haz clic en "Subir".
+3. El archivo CSV será procesado y los datos se almacenarán en `localStorage`.
+
+### Dashboard de Resultados del Modelo Predictivo
+
+1. Abre `dashboard.html` en tu navegador web para ver los resultados del modelo predictivo aplicado a datos de entrenamiento.
+2. Abre `dashboard2.html` para ver los resultados del modelo predictivo aplicado a datos de validación.
+
+### Sección "Nosotros"
+
+1. Abre `nosotros.html` para ver la información de presentación de la empresa.
+
+### Sección "Productos"
+
+1. Abre `productos.html` en tu navegador web.
+2. Sube el archivo `products.csv` desde la interfaz.
+3. Los datos se mostrarán en una tabla interactiva donde puedes aplicar filtros y ordenar la información.
+
+## Instalación
+
+1. Clona o descarga este repositorio en tu máquina local.
+
+   ```bash
+   git clone https://github.com/NadLor04/dashboard.git 
 
 
+## Contribuir
+Si deseas contribuir a este proyecto, por favor abre un issue o envía un pull request en GitHub.
 
-
-
-
+## Licencia
+Este proyecto está licenciado bajo la Licencia MIT.

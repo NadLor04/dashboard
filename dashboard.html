@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Dashboard</title>
+  <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
+  <link rel="icon" href="assets/img/logo-efc.png" type="image/x-icon" />
+
+  <!-- Fonts and icons -->
+  <script src="assets/js/plugin/webfont/webfont.min.js"></script>
+  <script>
+    WebFont.load({
+      google: { "families": ["Public Sans:300,400,500,600,700"] },
+      custom: { "families": ["Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['assets/css/fonts.min.css'] },
+      active: function () {
+        sessionStorage.fonts = true;
+      }
+    });
+  </script>
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/plugins.min.css" />
+  <link rel="stylesheet" href="assets/css/kaiadmin.min.css" />
+
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link rel="stylesheet" href="assets/css/demo.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- Sidebar -->
+    <div class="sidebar" data-background-color="dark">
+      <div class="sidebar-logo">
+        <!-- Logo Header -->
+        <div class="logo-header" data-background-color="dark2">
+          <a href="./index.html" class="logo">
+            <img src="assets/img/efc-logo.png" alt="navbar brand" class="navbar-brand" height="55" />
+          </a>
+          <div class="nav-toggle">
+            <button class="btn btn-toggle toggle-sidebar">
+              <i class="gg-menu-right"></i>
+            </button>
+            <button class="btn btn-toggle sidenav-toggler">
+              <i class="gg-menu-left"></i>
+            </button>
+          </div>
+          <button class="topbar-toggler more">
+            <i class="gg-more-vertical-alt"></i>
+          </button>
+        </div>
+        <!-- End Logo Header -->
+      </div>
+      <div class="sidebar-wrapper scrollbar scrollbar-inner">
+        <div class="sidebar-content">
+          <ul class="nav nav-secondary">
+            <li class="nav-section">
+              <span class="sidebar-mini-icon">
+                <i class="fa fa-ellipsis-h"></i>
+              </span>
+              <h4 class="text-section">Visualización de datos</h4>
+            </li>
+
+            <li class="nav-item active">
+              <a data-bs-toggle="collapse" href="#dashboard" class="collapsed" aria-expanded="false">
+                <i class="fas fa-home"></i>
+                <p>Dashboard</p>
+                <span class="caret"></span>
+              </a>
+              <div class="collapse" id="dashboard">
+                <ul class="nav nav-collapse">
+                  <li>
+                    <a href="./files.html">
+                      <span class="sub-item">Importar archivo de datos</span>
+                    </a>
+                  </li>
+                </ul>
+                <ul class="nav nav-collapse">
+                  <li>
+                    <a href="./dashboard.html">
+                      <span class="sub-item">Modelo predictivo aplicado con datos de entrenamiento</span>
+                    </a>
+                  </li>
+                </ul>
+                <ul class="nav nav-collapse">
+                  <li>
+                    <a href="./dashboard2.html">
+                      <span class="sub-item">Modelo predictivo aplicado con datos de prueba</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-section">
+              <span class="sidebar-mini-icon">
+                <i class="fa fa-ellipsis-h"></i>
+              </span>
+              <h4 class="text-section">Negocio</h4>
+            </li>
+
+            <li class="nav-item">
+              <a href="./nosotros.html">
+                <i class="fas fa-briefcase"></i>
+                <p>Nosotros</p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a data-bs-toggle="collapse" href="#datos">
+                <i class="fas fa-th-list"></i>
+                <p>Tablas de datos</p>
+                <span class="caret"></span>
+              </a>
+              <div class="collapse" id="datos">
+                <ul class="nav nav-collapse">
+                  <li>
+                    <a href="./products.html">
+                      <span class="sub-item">Productos</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="./404.html">
+                      <span class="sub-item">Almacenes</span>
+                    </a>
+                  </li>
+
+                </ul>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- End Sidebar -->
+
+    <div class="main-panel">
+      <div class="main-header">
+        <div class="main-header-logo">
+          <!-- Logo Header -->
+          <div class="logo-header" data-background-color="dark2">
+            <a href="./index.html" class="logo">
+              <img src="assets/css/bootstrap.min.css" alt="navbar brand" class="navbar-brand" height="20" />
+            </a>
+            <div class="nav-toggle">
+              <button class="btn btn-toggle toggle-sidebar">
+                <i class="gg-menu-right"></i>
+              </button>
+              <button class="btn btn-toggle sidenav-toggler">
+                <i class="gg-menu-left"></i>
+              </button>
+            </div>
+            <button class="topbar-toggler more">
+              <i class="gg-more-vertical-alt"></i>
+            </button>
+          </div>
+          <!-- End Logo Header -->
+        </div>
+        <!-- Navbar Header -->
+        <nav class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bottom">
+          <div class="container-fluid">
+            <nav class="navbar navbar-header-left navbar-expand-lg navbar-form nav-search p-0 d-none d-lg-flex">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <button type="submit" class="btn btn-search pe-1">
+                    <i class="fa fa-search search-icon"></i>
+                  </button>
+                </div>
+                <input type="text" placeholder="Buscar ..." class="form-control" />
+              </div>
+            </nav>
+
+            <ul class="navbar-nav topbar-nav ms-md-auto align-items-center">
+              <li class="nav-item topbar-icon dropdown hidden-caret d-flex d-lg-none">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                  aria-expanded="false" aria-haspopup="true">
+                  <i class="fa fa-search"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-search animated fadeIn">
+                  <form class="navbar-left navbar-form nav-search">
+                    <div class="input-group">
+                      <input type="text" placeholder="Buscar ..." class="form-control" />
+                    </div>
+                  </form>
+                </ul>
+              </li>
+              <li class="nav-item topbar-icon dropdown hidden-caret">
+                <a class="nav-link dropdown-toggle" href="#" id="messageDropdown" role="button"
+                  data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fa fa-envelope"></i>
+                </a>
+                <ul class="dropdown-menu messages-notif-box animated fadeIn" aria-labelledby="messageDropdown">
+                  <li>
+                    <div class="dropdown-title d-flex justify-content-between align-items-center">
+                      Mensajes
+                      <a href="#" class="small">Marca como Leidos</a>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="message-notif-scroll scrollbar-outer">
+                      <div class="notif-center">
+
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <a class="see-all" href="javascript:void(0);">Ver todos los mensajes<i
+                        class="fa fa-angle-right"></i>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item topbar-icon dropdown hidden-caret">
+                <a class="nav-link dropdown-toggle" href="#" id="notifDropdown" role="button" data-bs-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  <i class="fa fa-bell"></i>
+                  <span class="notification">4</span>
+                </a>
+                <ul class="dropdown-menu notif-box animated fadeIn" aria-labelledby="notifDropdown">
+                  <li>
+                    <div class="dropdown-title">Tienes 3 notificaciones</div>
+                  </li>
+                  <li>
+                    <div class="notif-scroll scrollbar-outer">
+                      <div class="notif-center">
+                        <a href="#">
+                          <div class="notif-icon notif-primary">
+                            <i class="fa fa-truck-loading"></i>
+                          </div>
+                          <div class="notif-content">
+                            <span class="block"> Nuevo pedido en Arequipa </span>
+                            <span class="time">hace 5 minutos</span>
+                          </div>
+                        </a>
+                        <a href="#">
+                          <div class="notif-icon notif-success">
+                            <i class="fa fa-comment"></i>
+                          </div>
+                          <div class="notif-content">
+                            <span class="block"> Actualización de tabla de productos </span>
+                            <span class="time">hace 1 hora</span>
+                          </div>
+                        </a>
+                        <a href="#">
+                          <div class="notif-img">
+                            <img src="assets/img/profile2.jpg" alt="Img Profile" />
+                          </div>
+                          <div class="notif-content">
+                            <span class="block"> Reunión para gestión de inventario </span>
+                            <span class="time">hace 2 dias</span>
+                          </div>
+                        </a>
+
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <a class="see-all" href="javascript:void(0);">Ver todas las notificaciones<i
+                        class="fa fa-angle-right"></i>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item topbar-icon dropdown hidden-caret">
+                <a class="nav-link" data-bs-toggle="dropdown" href="#" aria-expanded="false">
+                  <i class="fas fa-layer-group"></i>
+                </a>
+                <div class="dropdown-menu quick-actions animated fadeIn">
+                  <div class="quick-actions-header">
+                    <span class="title mb-1">Acciones Rápidas</span>
+                    <span class="subtitle op-7">Shortcuts</span>
+                  </div>
+                  <div class="quick-actions-scroll scrollbar-outer">
+                    <div class="quick-actions-items">
+                      <div class="row m-0">
+                        <a class="col-6 col-md-4 p-0" href="#">
+                          <div class="quick-actions-item">
+                            <div class="avatar-item bg-danger rounded-circle">
+                              <i class="far fa-calendar-alt"></i>
+                            </div>
+                            <span class="text">Calendario</span>
+                          </div>
+                        </a>
+                        <a class="col-6 col-md-4 p-0" href="#">
+                          <div class="quick-actions-item">
+                            <div class="avatar-item bg-warning rounded-circle">
+                              <i class="fas fa-map"></i>
+                            </div>
+                            <span class="text">Mapa</span>
+                          </div>
+                        </a>
+                        <a class="col-6 col-md-4 p-0" href="#">
+                          <div class="quick-actions-item">
+                            <div class="avatar-item bg-success rounded-circle">
+                              <i class="fas fa-envelope"></i>
+                            </div>
+                            <span class="text">Email</span>
+                          </div>
+                        </a>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="nav-item topbar-user dropdown hidden-caret">
+                <a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#" aria-expanded="false">
+                  <div class="avatar-sm">
+                    <img src="assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle" />
+                  </div>
+                  <span class="profile-username">
+                    <span class="op-7">Bienvenido,</span> <span class="fw-bold">Juan</span>
+                  </span>
+                </a>
+                <ul class="dropdown-menu dropdown-user animated fadeIn">
+                  <div class="dropdown-user-scroll scrollbar-outer">
+                    <li>
+                      <div class="user-box">
+                        <div class="avatar-lg">
+                          <img src="assets/img/profile.jpg" alt="image profile" class="avatar-img rounded" />
+                        </div>
+                        <div class="u-text">
+                          <h4>Juan Lopéz</h4>
+                          <p class="text-muted">jlopez@efc.com.pe</p>
+                          <a href="./404.html" class="btn btn-xs btn-secondary btn-sm">Ver perfil</a>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Mi perfil</a>
+                      <a class="dropdown-item" href="#">Bandeja de mensajes</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Configuración</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Cerrar sesión</a>
+                    </li>
+                  </div>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <!-- End Navbar -->
+      </div>
+      <div class="container">
+        <div class="page-inner">
+          <div class="page-header">
+            <h4 class="page-title">Dashboard</h4>
+            <ul class="breadcrumbs">
+              <li class="nav-home">
+                <a href="#">
+                  <i class="icon-grid"></i>
+                </a>
+              </li>
+              <li class="separator">
+                <i class="icon-arrow-right"></i>
+              </li>
+              <li class="nav-item">
+                <a href="#">Dashboard con datos de entrenamiento</a>
+              </li>
+            </ul>
+          </div>
+          <div class="page-category">
+            <!-- Card -->
+            <div class="row">
+              <div class="col-sm-6 col-md-3">
+                <div class="card card-stats card-primary card-round">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-5">
+                        <div class="icon-big text-center">
+                          <i class="fas fa-check-circle"></i>
+                        </div>
+                      </div>
+                      <div class="col-7 col-stats">
+                        <div class="numbers">
+                          <p class="card-category">Nro Ordenes</p>
+                          <h4 class="card-title" id="cantidad_ordenes">-</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3">
+                <div class="card card-stats card-info card-round">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-5">
+                        <div class="icon-big text-center">
+                          <i class="fas fa-truck-loading"></i>
+                        </div>
+                      </div>
+                      <div class="col-7 col-stats">
+                        <div class="numbers">
+                          <p class="card-category">Nro productos pedidos</p>
+                          <h4 class="card-title" id="productos_pedidos">-</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3">
+                <div class="card card-stats card-success card-round">
+                  <div class="card-body ">
+                    <div class="row">
+                      <div class="col-5">
+                        <div class="icon-big text-center">
+                          <i class="fas fa-chart-pie"></i>
+                        </div>
+                      </div>
+                      <div class="col-7 col-stats">
+                        <div class="numbers">
+                          <p class="card-category"># Categorias</p>
+                          <h4 class="card-title" id="cantidad_categorias">-</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3">
+                <div class="card card-stats card-secondary card-round">
+                  <div class="card-body ">
+                    <div class="row">
+                      <div class="col-5">
+                        <div class="icon-big text-center">
+                          <i class="fas fa-luggage-cart"></i>
+                        </div>
+                      </div>
+                      <div class="col-7 col-stats">
+                        <div class="numbers">
+                          <p class="card-category">Ganancias</p>
+                          <h4 class="card-title" id="total_precio_venta">S/. -</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="card">
+                  <div class="card-header">
+                    <div class="card-head-row card-tools-still-right">
+                      <div class="card-title">Ganancias mensuales en 2023</div>
+                      <div class="card-tools">
+                        <div class="dropdown">
+                          <button class="btn btn-icon btn-clean me-0" type="button" id="dropdownMenuButton"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-ellipsis-h"></i>
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Ver detalle</a>
+                            <a class="dropdown-item" href="#">Descagar</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="chart-container">
+                      <canvas id="lineChart" height="175"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card">
+                  <div class="card-header">
+                    <div class="card-head-row card-tools-still-right">
+                      <div class="card-title">Cantidad de productos por categoría</div>
+                      <div class="card-tools">
+                        <div class="dropdown">
+                          <button class="btn btn-icon btn-clean me-0" type="button" id="dropdownMenuButton"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-ellipsis-h"></i>
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Ver detalle</a>
+                            <a class="dropdown-item" href="#">Descagar</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="chart-container">
+                      <canvas id="pieChart" height="175" style="width: 100%;"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="row">
+              <div class="col-md-8">
+                <div class="card">
+                  <div class="card-header">
+                    <div class="card-head-row">
+                      <div class="card-title">Rotación de inventario en almacenes</div>
+                      <div class="card-tools">
+                        <a href="#" class="btn btn-label-success btn-round btn-sm me-2">
+                          <span class="btn-label">
+                            <i class="fa fa-pencil"></i>
+                          </span>
+                          Exportar
+                        </a>
+                        <a href="#" class="btn btn-label-info btn-round btn-sm">
+                          <span class="btn-label">
+                            <i class="fa fa-print"></i>
+                          </span>
+                          Imprimir
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="chart-container" style="min-height: 375px">
+                      <canvas id="statisticsChart"></canvas>
+                    </div>
+                    <div id="myChartLegend"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card">
+                  <div class="card-header">
+                    <div class="card-title">Top #4 Productos</div>
+                  </div>
+                  <div class="card-body pb-0">
+                    <div class="pull-in">
+                      <canvas id="topProductsChart"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container-fluid">
+        <nav class="pull-left">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" href="http://www.themekita.com"> EFC - Especialista en Abastecimiento Industrial
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"> Ayuda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"> Copyright © </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="copyright ms-auto">
+          2024, made with <i class="fa fa-heart heart text-danger"></i> by
+          <a href="http://www.themekita.com">ThemeKita Template</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+  </div>
+  <!--   Core JS Files   -->
+  <script src="assets/js/core/jquery-3.7.1.min.js"></script>
+  <script src="assets/js/core/popper.min.js"></script>
+  <script src="assets/js/core/bootstrap.min.js"></script>
+
+
+
+  <!-- jQuery Scrollbar -->
+  <script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+
+  <!-- Chart JS -->
+  <script src="assets/js/plugin/chart.js/chart.min.js"></script>
+
+  <!-- jQuery Sparkline -->
+  <script src="assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+
+  <!-- Chart Circle -->
+  <script src="assets/js/plugin/chart-circle/circles.min.js"></script>
+
+  <!-- Datatables -->
+  <script src="assets/js/plugin/datatables/datatables.min.js"></script>
+
+  <!-- Bootstrap Notify -->
+  <script src="assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+
+  <!-- jQuery Vector Maps -->
+  <script src="assets/js/plugin/jsvectormap/jsvectormap.min.js"></script>
+  <script src="assets/js/plugin/jsvectormap/world.js"></script>
+
+  <!-- Google Maps Plugin -->
+  <script src="assets/js/plugin/gmaps/gmaps.js"></script>
+
+  <!-- Sweet Alert -->
+  <script src="assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+
+  <!-- Kaiadmin JS -->
+  <script src="assets/js/kaiadmin.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      $.ajax({
+        url: './data/Resultado_modelo_train.csv',
+        dataType: 'text',
+        contentType: "text/plain; charset=utf-8",
+        success: function (data) {
+          processData(data);
+        }
+      });
+    });
+
+    function processData(allText) {
+      var allTextLines = allText.split(/\r\n|\n/);
+      var headers = allTextLines[0].split(',');
+      var lines = [];
+
+      for (var i = 1; i < allTextLines.length; i++) {
+        var data = allTextLines[i].split(',');
+        if (data.length == headers.length) {
+          var tarr = {};
+          for (var j = 0; j < headers.length; j++) {
+            tarr[headers[j]] = data[j];
+          }
+          lines.push(tarr);
+        }
+      }
+
+      // Cantidad de ordenes
+      $('#cantidad_ordenes').text(lines.length);
+
+      // Suma de la columna num_orders
+      var sum_productos_pedidos = lines.reduce((acc, curr) => acc + parseInt(curr['num_orders']), 0);
+      $('#productos_pedidos').text(sum_productos_pedidos);
+
+      // Cantidad de categorias
+      var categorias_unicas = [...new Set(lines.map(item => item['category']))];
+      $('#cantidad_categorias').text(categorias_unicas.length);
+
+      // Suma de checkout_price
+      var sum_precio_venta = lines.reduce((acc, curr) => acc + parseFloat(curr['checkout_price'] - curr['base_price']), 0);
+      $('#total_precio_venta').text('S/. ' + sum_precio_venta.toFixed(2));
+
+      // Procesar datos para el gráfico de líneas (Ganancias Mensuales)
+      processDataForLineChart(lines);
+      // Procesar datos para el gráfico de pie
+      processDataForPieChart(lines);
+      // Procesar datos para los gráficos
+      getTopProducts(lines);
+      // Procesar datos para el gráfico de líneas (Productos pedidos por storage_id)
+      processDataProductsOrderedChart(lines);
+    }
+
+    function processLineChartData(data) {
+      // Filtrar los datos para Oct (10), Nov (11), Dec (12)
+      var filteredData = data.filter(item => {
+        var month = parseInt(item['month']);
+        return month === 10 || month === 11 || month === 12;
+      });
+
+      // Sumar ganancias mensuales por mes
+      var monthlyGains = {
+        'Oct': 0,
+        'Nov': 0,
+        'Dec': 0
+      };
+
+      filteredData.forEach(item => {
+        var month = parseInt(item['month']);
+        var gain = parseFloat(item['checkout_price']) - parseFloat(item['base_price']);
+        if (month === 10) monthlyGains['Oct'] += gain;
+        if (month === 11) monthlyGains['Nov'] += gain;
+        if (month === 12) monthlyGains['Dec'] += gain;
+      });
+
+      var ctx = document.getElementById('lineChart').getContext('2d');
+      var chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['Oct', 'Nov', 'Dec'],
+          datasets: [{
+            label: 'Ganancias',
+            borderColor: '#1d7af3',
+            pointBorderColor: '#FFF',
+            pointBackgroundColor: '#1d7af3',
+            pointBorderWidth: 2,
+            pointHoverRadius: 4,
+            pointHoverBorderWidth: 1,
+            pointRadius: 4,
+            backgroundColor: 'transparent',
+            fill: true,
+            borderWidth: 2,
+            data: [monthlyGains['Oct'], monthlyGains['Nov'], monthlyGains['Dec']]
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          legend: {
+            position: 'bottom',
+            labels: {
+              padding: 10,
+              fontColor: '#1d7af3'
+            }
+          },
+          tooltips: {
+            bodySpacing: 4,
+            mode: 'nearest',
+            intersect: 0,
+            position: 'nearest',
+            xPadding: 10,
+            yPadding: 10,
+            caretPadding: 10
+          },
+          layout: {
+            padding: { left: 15, right: 15, top: 15, bottom: 15 }
+          },
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true
+              }
+            }]
+          }
+        }
+      });
+    }
+
+    function processDataForLineChart(data) {
+      var gananciasMensuales = Array(12).fill(0);
+
+      data.forEach(function (item) {
+        var month = parseInt(item['month']) - 1; // Convertir mes a índice (0-11)
+        var ganancia = parseFloat(item['checkout_price']) - parseFloat(item['base_price']);
+        gananciasMensuales[month] += ganancia;
+      });
+
+      var monthsInSpanish = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
+
+      var lineChart = new Chart(document.getElementById('lineChart').getContext('2d'), {
+        type: 'line',
+        data: {
+          labels: monthsInSpanish,
+          datasets: [{
+            label: 'Ganancias Mensuales en 2023',
+            borderColor: '#1d7af3',
+            pointBorderColor: '#FFF',
+            pointBackgroundColor: '#1d7af3',
+            pointBorderWidth: 2,
+            pointHoverRadius: 4,
+            pointHoverBorderWidth: 1,
+            pointRadius: 4,
+            backgroundColor: 'transparent',
+            fill: true,
+            borderWidth: 2,
+            data: gananciasMensuales
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          legend: {
+            position: 'bottom', // Leyenda a la derecha
+            labels: {
+              padding: 10,
+              fontColor: '#1d7af3'
+            }
+          },
+          tooltips: {
+            bodySpacing: 4,
+            mode: 'nearest',
+            intersect: 0,
+            position: 'nearest',
+            xPadding: 10,
+            yPadding: 10,
+            caretPadding: 10
+          },
+          layout: {
+            padding: { left: 15, right: 15, top: 15, bottom: 15 }
+          }
+        }
+      });
+    }
+    function processDataForPieChart(data) {
+      var categoryCounts = {};
+      var categoryColors = {}; // Objeto para almacenar colores por categoría
+
+      data.forEach(function (item) {
+        var category = item['category'];
+        if (category in categoryCounts) {
+          categoryCounts[category] += parseInt(item['num_orders']); // Sumar num_orders por categoría
+        } else {
+          categoryCounts[category] = parseInt(item['num_orders']); // Inicializar conteo para nueva categoría
+          categoryColors[category] = getRandomColor(); // Asignar un color aleatorio a la categoría
+        }
+      });
+
+      var labels = Object.keys(categoryCounts);
+      var counts = Object.values(categoryCounts);
+      var colors = labels.map(function (category) {
+        return categoryColors[category]; // Obtener el color asignado para cada categoría
+      });
+
+      // Crear el gráfico de pie
+      var pieChart = new Chart(document.getElementById('pieChart').getContext('2d'), {
+        type: 'pie',
+        data: {
+          datasets: [{
+            data: counts,
+            backgroundColor: colors, // Utilizar los colores asignados a cada categoría
+            borderWidth: 0
+          }],
+          labels: labels
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          legend: {
+            position: 'right',
+            labels: {
+              fontColor: 'rgb(154, 154, 154)',
+              fontSize: 7,
+              usePointStyle: true,
+              padding: 10
+            }
+          },
+          plugins: {
+            datalabels: {
+              formatter: (value, context) => {
+                let sum = context.chart._metasets[0].total;
+                let percentage = (value * 100 / sum).toFixed(2) + "%";
+                return percentage;
+              },
+              color: '#fff'
+            }
+          },
+          layout: {
+            padding: {
+              left: 20,
+              right: 20,
+              top: 20,
+              bottom: 20
+            }
+          }
+        }
+      });
+    }
+
+    // Función para generar un color hexadecimal aleatorio
+    function getRandomColor() {
+      var letters = '0123456789ABCDEF';
+      var color = '#';
+      for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    // Obtener los 5 productos más comprados
+    function getTopProducts(data) {
+      var productCounts = {};
+
+      data.forEach(function (item) {
+        var productId = item['product_id'];
+        var numOrders = parseInt(item['num_orders']);
+        if (productId in productCounts) {
+          productCounts[productId] += numOrders;
+        } else {
+          productCounts[productId] = numOrders;
+        }
+      });
+
+      var topProducts = Object.entries(productCounts)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 4)
+        .map(entry => entry[0]);
+
+      $.ajax({
+        url: './data/products.csv',
+        dataType: 'text',
+        contentType: "text/plain; charset=utf-8",
+        success: function (productData) {
+          var allTextLines = productData.split(/\r\n|\n/);
+          var headers = allTextLines[0].split(',');
+          var productLines = [];
+
+          for (var i = 1; i < allTextLines.length; i++) {
+            var data = allTextLines[i].split(',');
+            if (data.length == headers.length) {
+              var tarr = {};
+              for (var j = 0; j < headers.length; j++) {
+                tarr[headers[j]] = data[j];
+              }
+              productLines.push(tarr);
+            }
+          }
+
+          var topProductNames = topProducts.map(productId => {
+            var product = productLines.find(p => p['product_id'] == productId);
+            return product ? product['description'] : 'Unknown';
+          });
+
+          displayTopProducts(topProductNames, topProducts.map(id => productCounts[id]));
+          displayTopProductsChart(topProductNames, topProducts.map(id => productCounts[id]));
+        }
+      });
+    }
+
+    function displayTopProducts(names, counts) {
+      var container = $('.card-body.pb-0');
+      container.html(''); // Limpiar contenido previo
+
+      names.forEach((name, index) => {
+        var count = counts[index];
+        container.append(`
+      <div class="d-flex">
+        <div class="avatar">
+          <img src="assets/img/logoproduct.svg" alt="..." class="avatar-img rounded-circle" />
+        </div>
+        <div class="flex-1 pt-1 ms-2">
+          <h6 class="fw-bold mb-1">${name}</h6>
+          <small class="text-muted">ID: ${index + 1}</small>
+        </div>
+        <div class="d-flex ms-auto align-items-center">
+          <h4 class="text-info fw-bold">+${count}</h4>
+        </div>
+      </div>
+      <div class="separator-dashed"></div>
+    `);
+      });
+    }
+
+    function displayTopProductsChart(names, counts) {
+      var topProductsChart = new Chart(document.getElementById('topProductsChart').getContext('2d'), {
+        type: 'bar',
+        data: {
+          labels: names,
+          datasets: [{
+            label: 'Pedidos',
+            backgroundColor: '#1d7af3',
+            borderColor: '#1d7af3',
+            data: counts,
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          legend: {
+            position: 'right', // Leyenda a la derecha
+            labels: {
+              fontColor: 'rgb(154, 154, 154)',
+              fontSize: 11,
+              usePointStyle: true,
+              padding: 20
+            }
+          },
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true,
+                stepSize: 1
+              }
+            }]
+          },
+          layout: {
+            padding: {
+              left: 20,
+              right: 20,
+              top: 20,
+              bottom: 20
+            }
+          }
+        }
+      });
+    }
+
+    function processProductsOrderedChartData(data) {
+      // Filtrar los datos para Oct (10), Nov (11), Dec (12)
+      var filteredData = data.filter(item => {
+        var month = parseInt(item['month']);
+        return month === 10 || month === 11 || month === 12;
+      });
+
+      // Agrupar los datos por storage_id y mes
+      var groupedData = {
+        '101': { 'Oct': 0, 'Nov': 0, 'Dec': 0 },
+        '102': { 'Oct': 0, 'Nov': 0, 'Dec': 0 },
+        '103': { 'Oct': 0, 'Nov': 0, 'Dec': 0 }
+      };
+
+      filteredData.forEach(item => {
+        var month = parseInt(item['month']);
+        var storageId = item['storage_id'];
+        var numOrders = parseInt(item['num_orders']);
+
+        if (storageId in groupedData) {
+          if (month === 10) groupedData[storageId]['Oct'] += numOrders;
+          if (month === 11) groupedData[storageId]['Nov'] += numOrders;
+          if (month === 12) groupedData[storageId]['Dec'] += numOrders;
+        }
+      });
+
+      var ctx = document.getElementById('statisticsChart');
+      if (ctx === null) {
+        console.error("No se encontró el canvas con ID 'statisticsChart'");
+        return;
+      }
+
+      var chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ['Oct', 'Nov', 'Dec'],
+          datasets: [
+            {
+              label: 'Chorrillos',
+              borderColor: '#1d7af3',
+              pointBorderColor: '#FFF',
+              pointBackgroundColor: '#1d7af3',
+              pointBorderWidth: 2,
+              pointHoverRadius: 4,
+              pointHoverBorderWidth: 1,
+              pointRadius: 4,
+              backgroundColor: 'rgba(29, 122, 243, 0.1)', // Sombreado
+              fill: true,
+              borderWidth: 2,
+              data: [groupedData['101']['Oct'], groupedData['101']['Nov'], groupedData['101']['Dec']]
+            },
+            {
+              label: 'Arequipa',
+              borderColor: '#f3545d',
+              pointBorderColor: '#FFF',
+              pointBackgroundColor: '#f3545d',
+              pointBorderWidth: 2,
+              pointHoverRadius: 4,
+              pointHoverBorderWidth: 1,
+              pointRadius: 4,
+              backgroundColor: 'rgba(243, 84, 93, 0.1)', // Sombreado
+              fill: true,
+              borderWidth: 2,
+              data: [groupedData['102']['Oct'], groupedData['102']['Nov'], groupedData['102']['Dec']]
+            },
+            {
+              label: 'Lima',
+              borderColor: '#fdaf4b',
+              pointBorderColor: '#FFF',
+              pointBackgroundColor: '#fdaf4b',
+              pointBorderWidth: 2,
+              pointHoverRadius: 4,
+              pointHoverBorderWidth: 1,
+              pointRadius: 4,
+              backgroundColor: 'rgba(253, 175, 75, 0.1)', // Sombreado
+              fill: true,
+              borderWidth: 2,
+              data: [groupedData['103']['Oct'], groupedData['103']['Nov'], groupedData['103']['Dec']]
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          legend: {
+            position: 'bottom', // Leyenda abajo
+            labels: {
+              padding: 10,
+              fontColor: '#1d7af3'
+            }
+          },
+          tooltips: {
+            bodySpacing: 4,
+            mode: 'nearest',
+            intersect: 0,
+            position: 'nearest',
+            xPadding: 10,
+            yPadding: 10,
+            caretPadding: 10
+          },
+          layout: {
+            padding: { left: 15, right: 15, top: 15, bottom: 15 }
+          },
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true
+              }
+            }]
+          }
+        }
+      });
+
+    }
+
+    function processDataProductsOrderedChart(data) {
+      // Mapear los números de mes a nombres de mes
+      const monthNames = ['', 'Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
+
+      // Agrupar los datos por storage_id y mes
+      var groupedData = {
+        '101': { '1': 0, '2': 0, '3': 0, '4': 0, '5': 0, '6': 0, '7': 0, '8': 0, '9': 0, '10': 0, '11': 0, '12': 0 },
+        '102': { '1': 0, '2': 0, '3': 0, '4': 0, '5': 0, '6': 0, '7': 0, '8': 0, '9': 0, '10': 0, '11': 0, '12': 0 },
+        '103': { '1': 0, '2': 0, '3': 0, '4': 0, '5': 0, '6': 0, '7': 0, '8': 0, '9': 0, '10': 0, '11': 0, '12': 0 }
+      };
+
+      data.forEach(item => {
+        var month = item['month'];
+        var storageId = item['storage_id'];
+        var numOrders = parseInt(item['num_orders']);
+
+        if (storageId in groupedData) {
+          groupedData[storageId][month] += numOrders;
+        }
+      });
+
+      var ctx = document.getElementById('statisticsChart').getContext('2d');
+      var chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: monthNames.slice(1), // Usar nombres de mes en lugar de números
+          datasets: [
+            // Datos para Chorrillos
+            {
+              label: 'Chorrillos',
+              borderColor: '#1d7af3',
+              pointBorderColor: '#FFF',
+              pointBackgroundColor: '#1d7af3',
+              pointBorderWidth: 2,
+              pointHoverRadius: 4,
+              pointHoverBorderWidth: 1,
+              pointRadius: 4,
+              backgroundColor: 'rgba(29, 122, 243, 0.1)', // Sombreado
+              fill: true,
+              borderWidth: 2,
+              data: Object.values(groupedData['101'])
+            },
+            // Datos para Arequipa
+            {
+              label: 'Arequipa',
+              borderColor: '#f3545d',
+              pointBorderColor: '#FFF',
+              pointBackgroundColor: '#f3545d',
+              pointBorderWidth: 2,
+              pointHoverRadius: 4,
+              pointHoverBorderWidth: 1,
+              pointRadius: 4,
+              backgroundColor: 'rgba(243, 84, 93, 0.1)', // Sombreado
+              fill: true,
+              borderWidth: 2,
+              data: Object.values(groupedData['102'])
+            },
+            // Datos para Lima
+            {
+              label: 'Lima',
+              borderColor: '#fdaf4b',
+              pointBorderColor: '#FFF',
+              pointBackgroundColor: '#fdaf4b',
+              pointBorderWidth: 2,
+              pointHoverRadius: 4,
+              pointHoverBorderWidth: 1,
+              pointRadius: 4,
+              backgroundColor: 'rgba(253, 175, 75, 0.1)', // Sombreado
+              fill: true,
+              borderWidth: 2,
+              data: Object.values(groupedData['103'])
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          legend: {
+            position: 'bottom', // Leyenda abajo
+            labels: {
+              padding: 10,
+              fontColor: '#1d7af3'
+            }
+          },
+          tooltips: {
+            bodySpacing: 4,
+            mode: 'nearest',
+            intersect: 0,
+            position: 'nearest',
+            xPadding: 10,
+            yPadding: 10,
+            caretPadding: 10
+          },
+          layout: {
+            padding: { left: 15, right: 15, top: 15, bottom: 15 }
+          },
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true
+              }
+            }]
+          }
+        }
+      });
+    }
+  </script>
+</body>
+
+</html>
