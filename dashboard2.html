@@ -26,6 +26,7 @@
 
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link rel="stylesheet" href="assets/css/demo.css" />
+
 </head>
 
 <body>
@@ -79,7 +80,8 @@
                 <ul class="nav nav-collapse">
                   <li>
                     <a href="./dashboard.html">
-                      <span class="sub-item">Modelo predictivo aplicado con datos de entrenamiento</span>
+                      <span class="sub-item">Modelo predictivo aplicado con datos de
+                        entrenamiento</span>
                     </a>
                   </li>
                 </ul>
@@ -308,10 +310,10 @@
               <li class="nav-item topbar-user dropdown hidden-caret">
                 <a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#" aria-expanded="false">
                   <div class="avatar-sm">
-                    <img src="assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle" />
+                    <img src="assets/img/user.jpg" alt="..." class="avatar-img rounded-circle" />
                   </div>
                   <span class="profile-username">
-                    <span class="op-7">Bienvenido,</span> <span class="fw-bold">Juan</span>
+                    <span class="op-7">Bienvenido,</span> <span class="fw-bold" id="userName">Juan</span>
                   </span>
                 </a>
                 <ul class="dropdown-menu dropdown-user animated fadeIn">
@@ -319,12 +321,13 @@
                     <li>
                       <div class="user-box">
                         <div class="avatar-lg">
-                          <img src="assets/img/profile.jpg" alt="image profile" class="avatar-img rounded" />
+                          <img src="assets/img/user.jpg" alt="image profile" class="avatar-img rounded" />
                         </div>
                         <div class="u-text">
-                          <h4>Juan Lopéz</h4>
-                          <p class="text-muted">jlopez@efc.com.pe</p>
-                          <a href="./404.html" class="btn btn-xs btn-secondary btn-sm">Ver perfil</a>
+                          <h4 id="userName1">Nombre Usuario</h4>
+                          <p class="text-muted" id="userEmail">correo@dominio.com</p>
+                          <a href="./404.html" class="btn btn-xs btn-secondary btn-sm">Ver
+                            perfil</a>
                         </div>
                       </div>
                     </li>
@@ -335,7 +338,8 @@
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item" href="#">Configuración</a>
                       <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="./index.html" id="logoutButton">Cerrar sesión</a>
+                      <a class="dropdown-item" href="./index.html" id="logoutButton">Cerrar
+                        sesión</a>
                     </li>
                   </div>
                 </ul>
@@ -347,111 +351,38 @@
       </div>
       <div class="container">
         <div class="page-inner">
-          <div class="page-header">
-            <h4 class="page-title">Dashboard</h4>
-            <ul class="breadcrumbs">
-              <li class="nav-home">
-                <a href="#">
-                  <i class="icon-grid"></i>
-                </a>
-              </li>
-              <li class="separator">
-                <i class="icon-arrow-right"></i>
-              </li>
-              <li class="nav-item">
-                <a href="#">Dashboard con datos de prueba</a>
-              </li>
-            </ul>
+          <div class="page-header" style="justify-content: space-between;">
+            <div class="page-header">
+              <h4 class="page-title">Dashboard</h4>
+              <ul class="breadcrumbs">
+                <li class="nav-home">
+                  <a href="#">
+                    <i class="icon-grid"></i>
+                  </a>
+                </li>
+                <li class="separator">
+                  <i class="icon-arrow-right"></i>
+                </li>
+                <li class="nav-item">
+                  <a href="#">Dashboard con datos de entrenamiento</a>
+                </li>
+              </ul>
+            </div>
+            <div class="form-group" style="justify-self: flex-end;">
+              <label for="category-select">Selecciona una categoría</label>
+              <select class="form-select" id="categorySelect">
+                <!-- Las opciones se generarán dinámicamente -->
+              </select>
+            </div>
           </div>
           <div class="page-category">
-            <!-- Card -->
-
-            <div class="row">
-              <div class="col-sm-6 col-md-3">
-                <div class="card card-stats card-primary card-round">
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col-5">
-                        <div class="icon-big text-center">
-                          <i class="fas fa-check-circle"></i>
-                        </div>
-                      </div>
-                      <div class="col-7 col-stats">
-                        <div class="numbers">
-                          <p class="card-category">Nro Ordenes</p>
-                          <h4 class="card-title" id="cantidad_ordenes">-</h4>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-md-3">
-                <div class="card card-stats card-info card-round">
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col-5">
-                        <div class="icon-big text-center">
-                          <i class="fas fa-truck-loading"></i>
-                        </div>
-                      </div>
-                      <div class="col-7 col-stats">
-                        <div class="numbers">
-                          <p class="card-category">Nro productos pedidos</p>
-                          <h4 class="card-title" id="productos_pedidos">-</h4>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-md-3">
-                <div class="card card-stats card-success card-round">
-                  <div class="card-body ">
-                    <div class="row">
-                      <div class="col-5">
-                        <div class="icon-big text-center">
-                          <i class="fas fa-chart-pie"></i>
-                        </div>
-                      </div>
-                      <div class="col-7 col-stats">
-                        <div class="numbers">
-                          <p class="card-category"># Categorias</p>
-                          <h4 class="card-title" id="cantidad_categorias">-</h4>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6 col-md-3">
-                <div class="card card-stats card-secondary card-round">
-                  <div class="card-body ">
-                    <div class="row">
-                      <div class="col-5">
-                        <div class="icon-big text-center">
-                          <i class="fas fa-luggage-cart"></i>
-                        </div>
-                      </div>
-                      <div class="col-7 col-stats">
-                        <div class="numbers">
-                          <p class="card-category">Ganancias</p>
-                          <h4 class="card-title" id="total_precio_venta">S/. -</h4>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
 
             <div class="row">
               <div class="col-md-6">
                 <div class="card">
                   <div class="card-header">
                     <div class="card-head-row card-tools-still-right">
-                      <div class="card-title">Ganancias mensuales en 2023</div>
+                      <div class="card-title">Comparación estacional de la demanda por mes</div>
                       <div class="card-tools">
                         <div class="dropdown">
                           <button class="btn btn-icon btn-clean me-0" type="button" id="dropdownMenuButton"
@@ -468,7 +399,7 @@
                   </div>
                   <div class="card-body">
                     <div class="chart-container">
-                      <canvas id="lineChart" height="175"></canvas>
+                      <canvas id="multipleLineChart"></canvas>
                     </div>
                   </div>
                 </div>
@@ -494,16 +425,40 @@
                   </div>
                   <div class="card-body">
                     <div class="chart-container">
-                      <canvas id="pieChart" height="175" style="width: 100%;"></canvas>
+                      <canvas id="pieChart" height="100" style="width: 100%;"></canvas>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-
-
             <div class="row">
-              <div class="col-md-8">
+              <div class="col-md-6">
+                <div class="card">
+                  <div class="card-header">
+                    <div class="card-head-row card-tools-still-right">
+                      <div class="card-title">Desempeño de Canales Promocionales por Mes</div>
+                      <div class="card-tools">
+                        <div class="dropdown">
+                          <button class="btn btn-icon btn-clean me-0" type="button" id="dropdownMenuButton"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-ellipsis-h"></i>
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Ver detalle</a>
+                            <a class="dropdown-item" href="#">Descagar</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="chart-container">
+                      <canvas id="promotionRadarChart"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
                 <div class="card">
                   <div class="card-header">
                     <div class="card-head-row">
@@ -532,6 +487,13 @@
                   </div>
                 </div>
               </div>
+            </div>
+            <div class="row">
+              <div class="col-md-8">
+                <div class="card">
+
+                </div>
+              </div>
               <div class="col-md-4">
                 <div class="card">
                   <div class="card-header">
@@ -544,34 +506,39 @@
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
       </div>
+      <footer class="footer">
+        <div class="container-fluid">
+          <nav class="pull-left">
+            <ul class="nav">
+              <li class="nav-item">
+                <a class="nav-link" href="http://www.themekita.com"> EFC - Especialista en
+                  Abastecimiento
+                  Industrial
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"> Ayuda</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"> Copyright © </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="copyright ms-auto">
+            2024, made with <i class="fa fa-heart heart text-danger"></i> by
+            <a href="http://www.themekita.com">ThemeKita Template</a>
+          </div>
+        </div>
+      </footer>
+
     </div>
 
-    <footer class="footer">
-      <div class="container-fluid">
-        <nav class="pull-left">
-          <ul class="nav">
-            <li class="nav-item">
-              <a class="nav-link" href="http://www.themekita.com"> EFC - Especialista en Abastecimiento Industrial
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"> Ayuda</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"> Copyright © </a>
-            </li>
-          </ul>
-        </nav>
-        <div class="copyright ms-auto">
-          2024, made with <i class="fa fa-heart heart text-danger"></i> by
-          <a href="http://www.themekita.com">ThemeKita Template</a>
-        </div>
-      </div>
-    </footer>
+
   </div>
 
   <!--   Core JS Files   -->
@@ -611,92 +578,91 @@
 
   <!-- Kaiadmin JS -->
   <script src="assets/js/kaiadmin.min.js"></script>
+  <script>
+    function loadCSV() {
+      const fileInput = document.getElementById('csv-file');
+      const file = 'data/Resultado_train.csv'; // Aquí debes poner la ruta del archivo CSV
+
+      fetch(file)
+        .then(response => response.text())
+        .then(text => {
+          const data = Papa.parse(text, { header: true });
+          const parsedData = data.data.filter(row => Object.keys(row).length > 1); // Filtrar filas vacías
+          localStorage.setItem('csvData', JSON.stringify(parsedData)); // Guardar en localStorage
+          displayTable(parsedData); // Mostrar en tabla
+        })
+        .catch(error => console.error('Error al cargar el CSV:', error));
+    }
+
+    window.onload = function () {
+      const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+      if (currentUser) {
+        // Muestra solo la primera palabra del nombre y el correo
+        document.getElementById('userName').textContent = currentUser.name.split(' ')[0];
+        document.getElementById('userName1').textContent = currentUser.name;
+        document.getElementById('userEmail').textContent = currentUser.email;
+      }
+    };
+
+    // Lógica para cerrar sesión
+    const logoutButton = document.getElementById('logoutButton');
+    if (logoutButton) { // Asegúrate de que el botón existe antes de añadir el evento
+      logoutButton.addEventListener('click', function () {
+        // Eliminar la información del usuario recordado de localStorage
+        localStorage.removeItem('rememberMe');
+        localStorage.removeItem('currentUser');
+        localStorage.removeItem('csvData');
+        alert('Has cerrado sesión correctamente.');
+        window.location.href = 'index.html'; // Redirigir al login
+      });
+    }
+  </script>
 
   <script>
-    $(document).ready(function () {
-      $.ajax({
-        url: './data/Resultado_modelo_test.csv',
-        dataType: 'text',
-        contentType: "text/plain; charset=utf-8",
-        success: function (data) {
-          processData(data);
-        }
-      });
-    });
-
-    function processData(allText) {
-      var allTextLines = allText.split(/\r\n|\n/);
-      var headers = allTextLines[0].split(',');
-      var lines = [];
-
-      for (var i = 1; i < allTextLines.length; i++) {
-        var data = allTextLines[i].split(',');
-        if (data.length == headers.length) {
-          var tarr = {};
-          for (var j = 0; j < headers.length; j++) {
-            tarr[headers[j]] = data[j];
-          }
-          lines.push(tarr);
-        }
-      }
-
-      // Cantidad de ordenes
-      $('#cantidad_ordenes').text(lines.length);
-
-      // Suma de la columna num_orders
-      var sum_productos_pedidos = lines.reduce((acc, curr) => acc + parseInt(curr['num_orders']), 0);
-      $('#productos_pedidos').text(sum_productos_pedidos);
-
-      // Cantidad de categorias
-      var categorias_unicas = [...new Set(lines.map(item => item['category']))];
-      $('#cantidad_categorias').text(categorias_unicas.length);
-
-      // Suma de checkout_price
-      var sum_precio_venta = lines.reduce((acc, curr) => acc + parseFloat(curr['checkout_price'] - curr['base_price']), 0);
-      $('#total_precio_venta').text('S/. ' + sum_precio_venta.toFixed(2));
-
-      // Procesar datos para el gráfico de líneas (Ganancias Mensuales)
-      processLineChartData(lines);
-      // Procesar datos para el gráfico de pie
-      processDataForPieChart(lines);
-      // Procesar datos para los gráficos
-      getTopProducts(lines);
-      // Procesar datos para el gráfico de líneas (Productos pedidos por storage_id)
-      processProductsOrderedChartData(lines);
-    }
-
-    function processLineChartData(data) {
-      // Filtrar los datos para Oct (10), Nov (11), Dec (12)
-      var filteredData = data.filter(item => {
-        var month = parseInt(item['month']);
-        return month === 10 || month === 11 || month === 12;
-      });
-
-      // Sumar ganancias mensuales por mes
-      var monthlyGains = {
-        'Oct': 0,
-        'Nov': 0,
-        'Dec': 0
+    const storedData = JSON.parse(localStorage.getItem('csvData'));
+    function prepareSeasonalData(data) {
+      const monthlyData = {
+        actual: {},
+        predicted: {}
       };
 
-      filteredData.forEach(item => {
-        var month = parseInt(item['month']);
-        var gain = parseFloat(item['checkout_price']) - parseFloat(item['base_price']);
-        if (month === 10) monthlyGains['Oct'] += gain;
-        if (month === 11) monthlyGains['Nov'] += gain;
-        if (month === 12) monthlyGains['Dec'] += gain;
+      // Agrupar por mes, sumando las órdenes reales y predichas
+      data.forEach(item => {
+        const month = parseInt(item.month);
+        const orders = parseInt(item.num_orders);
+        const predictedOrders = parseInt(item.num_orders_predict); // Asumimos que tienes este campo en los datos
+
+        if (!monthlyData.actual[month]) {
+          monthlyData.actual[month] = 0;
+          monthlyData.predicted[month] = 0;
+        }
+
+        monthlyData.actual[month] += orders;
+        monthlyData.predicted[month] += predictedOrders;
       });
 
-      var ctx = document.getElementById('lineChart').getContext('2d');
-      var chart = new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: ['Oct', 'Nov', 'Dec'],
-          datasets: [{
-            label: 'Ganancias',
-            borderColor: '#1d7af3',
-            pointBorderColor: '#FFF',
-            pointBackgroundColor: '#1d7af3',
+      return monthlyData;
+    }
+
+    const groupedData = prepareSeasonalData(storedData);
+
+    // Preparar los datos para el gráfico
+    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const actualOrders = months.map((_, index) => groupedData.actual[index + 1] || 0); // Reales
+    const predictedOrders = months.map((_, index) => groupedData.predicted[index + 1] || 0); // Predichas
+
+    // Crear el gráfico de líneas múltiples
+    var ctx = document.getElementById("multipleLineChart").getContext("2d");
+    var myMultipleLineChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: months, // Meses como etiquetas
+        datasets: [
+          {
+            label: "Pedidos Reales",
+            borderColor: "#1d7af3", // Color de la línea
+            pointBorderColor: "#FFF",
+            pointBackgroundColor: "#1d7af3",
             pointBorderWidth: 2,
             pointHoverRadius: 4,
             pointHoverBorderWidth: 1,
@@ -704,62 +670,13 @@
             backgroundColor: 'transparent',
             fill: true,
             borderWidth: 2,
-            data: [monthlyGains['Oct'], monthlyGains['Nov'], monthlyGains['Dec']]
-          }]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          legend: {
-            position: 'bottom',
-            labels: {
-              padding: 10,
-              fontColor: '#1d7af3'
-            }
+            data: actualOrders // Datos reales por mes
           },
-          tooltips: {
-            bodySpacing: 4,
-            mode: 'nearest',
-            intersect: 0,
-            position: 'nearest',
-            xPadding: 10,
-            yPadding: 10,
-            caretPadding: 10
-          },
-          layout: {
-            padding: { left: 15, right: 15, top: 15, bottom: 15 }
-          },
-          scales: {
-            yAxes: [{
-              ticks: {
-                beginAtZero: true
-              }
-            }]
-          }
-        }
-      });
-    }
-
-    function processDataForLineChart(data) {
-      var gananciasMensuales = Array(12).fill(0);
-
-      data.forEach(function (item) {
-        var month = parseInt(item['month']) - 1; // Convertir mes a índice (0-11)
-        var ganancia = parseFloat(item['checkout_price']) - parseFloat(item['base_price']);
-        gananciasMensuales[month] += ganancia;
-      });
-
-      var monthsInSpanish = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
-
-      var lineChart = new Chart(document.getElementById('lineChart').getContext('2d'), {
-        type: 'line',
-        data: {
-          labels: monthsInSpanish,
-          datasets: [{
-            label: 'Ganancias Mensuales en 2023',
-            borderColor: '#1d7af3',
-            pointBorderColor: '#FFF',
-            pointBackgroundColor: '#1d7af3',
+          {
+            label: "Pedidos Predichos",
+            borderColor: "#59d05d", // Color de la línea
+            pointBorderColor: "#FFF",
+            pointBackgroundColor: "#59d05d",
             pointBorderWidth: 2,
             pointHoverRadius: 4,
             pointHoverBorderWidth: 1,
@@ -767,128 +684,302 @@
             backgroundColor: 'transparent',
             fill: true,
             borderWidth: 2,
-            data: gananciasMensuales
-          }]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          legend: {
-            position: 'bottom', // Leyenda a la derecha
-            labels: {
-              padding: 10,
-              fontColor: '#1d7af3'
-            }
-          },
-          tooltips: {
-            bodySpacing: 4,
-            mode: 'nearest',
-            intersect: 0,
-            position: 'nearest',
-            xPadding: 10,
-            yPadding: 10,
-            caretPadding: 10
-          },
-          layout: {
-            padding: { left: 15, right: 15, top: 15, bottom: 15 }
+            data: predictedOrders // Datos predichos por mes
           }
-        }
-      });
-    }
-    function processDataForPieChart(data) {
-      var categoryCounts = {};
-      var categoryColors = {}; // Objeto para almacenar colores por categoría
-
-      data.forEach(function (item) {
-        var category = item['category'];
-        if (category in categoryCounts) {
-          categoryCounts[category] += parseInt(item['num_orders']); // Sumar num_orders por categoría
-        } else {
-          categoryCounts[category] = parseInt(item['num_orders']); // Inicializar conteo para nueva categoría
-          categoryColors[category] = getRandomColor(); // Asignar un color aleatorio a la categoría
-        }
-      });
-
-      var labels = Object.keys(categoryCounts);
-      var counts = Object.values(categoryCounts);
-      var colors = labels.map(function (category) {
-        return categoryColors[category]; // Obtener el color asignado para cada categoría
-      });
-
-      // Crear el gráfico de pie
-      var pieChart = new Chart(document.getElementById('pieChart').getContext('2d'), {
-        type: 'pie',
-        data: {
-          datasets: [{
-            data: counts,
-            backgroundColor: colors, // Utilizar los colores asignados a cada categoría
-            borderWidth: 0
-          }],
-          labels: labels
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        legend: {
+          position: 'top',
         },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          legend: {
-            position: 'right',
-            labels: {
-              fontColor: 'rgb(154, 154, 154)',
-              fontSize: 7,
-              usePointStyle: true,
-              padding: 10
+        tooltips: {
+          bodySpacing: 4,
+          mode: "nearest",
+          intersect: 0,
+          position: "nearest",
+          xPadding: 10,
+          yPadding: 10,
+          caretPadding: 10
+        },
+        layout: {
+          padding: { left: 15, right: 15, top: 15, bottom: 15 }
+        },
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: 'Mes'
             }
           },
-          plugins: {
-            datalabels: {
-              formatter: (value, context) => {
-                let sum = context.chart._metasets[0].total;
-                let percentage = (value * 100 / sum).toFixed(2) + "%";
-                return percentage;
-              },
-              color: '#fff'
-            }
-          },
-          layout: {
-            padding: {
-              left: 20,
-              right: 20,
-              top: 20,
-              bottom: 20
+          y: {
+            title: {
+              display: true,
+              text: 'Cantidad de Productos Solicitados'
             }
           }
         }
-      });
-    }
-
-    // Función para generar un color hexadecimal aleatorio
-    function getRandomColor() {
-      var letters = '0123456789ABCDEF';
-      var color = '#';
-      for (var i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
       }
-      return color;
+    });
+  </script>
+
+  <script>
+    // Variable global para almacenar el gráfico
+    let pieChart = null;
+
+    // Obtener datos del localStorage
+    const data = JSON.parse(localStorage.getItem('csvData'));
+
+    // Función para filtrar datos por categoría
+    function filterDataByCategory(category) {
+      return data.filter(item => item.category === category);
     }
 
-    // Obtener los 5 productos más comprados
-    function getTopProducts(data) {
-      var productCounts = {};
-
-      data.forEach(function (item) {
-        var productId = item['product_id'];
-        var numOrders = parseInt(item['num_orders']);
-        if (productId in productCounts) {
-          productCounts[productId] += numOrders;
+    // Función para contar productos por ID y ordenar por cantidad
+    function countAndSortProductsByCategory(filteredData) {
+      const productCounts = filteredData.reduce((acc, item) => {
+        if (acc[item.product_id]) {
+          acc[item.product_id].count += parseInt(item.num_orders_predict);
         } else {
-          productCounts[productId] = numOrders;
+          acc[item.product_id] = {
+            product_id: item.product_id,
+            count: parseInt(item.num_orders_predict),
+            product_name: item.product_name || item.product_id // Asegúrate de que product_name esté disponible
+          };
         }
+        return acc;
+      }, {});
+
+      // Convertir objeto en array y ordenar por cantidad descendente
+      return Object.values(productCounts)
+        .sort((a, b) => b.count - a.count)
+        .slice(0, 16); // Obtener solo los 10 productos más pedidos
+    }
+
+    // Función para actualizar el gráfico de pastel
+    function updatePieChart(category) {
+      if (!data) {
+        console.error('No hay datos disponibles en localStorage.');
+        return;
+      }
+
+      const filteredData = filterDataByCategory(category);
+      const sortedProducts = countAndSortProductsByCategory(filteredData);
+
+      const labels = sortedProducts.map(product => product.product_name);
+      const counts = sortedProducts.map(product => product.count);
+
+      const colors = sortedProducts.map((_, index) => {
+        return `hsl(${Math.floor(index * 360 / sortedProducts.length)}, 70%, 70%)`;
       });
 
-      var topProducts = Object.entries(productCounts)
-        .sort((a, b) => b[1] - a[1])
-        .slice(0, 4)
-        .map(entry => entry[0]);
+      const chartData = {
+        datasets: [{
+          data: counts,
+          backgroundColor: colors,
+          borderWidth: 0
+        }],
+        labels: labels
+      };
 
+      if (pieChart) {
+        // Si el gráfico ya existe, simplemente actualiza los datos
+        pieChart.data = chartData;
+        pieChart.update();
+      } else {
+        // Si el gráfico no existe, créalo
+        const ctx = document.getElementById('pieChart').getContext('2d');
+        pieChart = new Chart(ctx, {
+          type: 'pie',
+          data: chartData,
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            legend: {
+              position: 'left',
+              labels: {
+                fontColor: 'rgb(154, 154, 154)',
+                fontSize: 12,
+                usePointStyle: true,
+                padding: 10
+              }
+            },
+            plugins: {
+              datalabels: {
+                formatter: (value, context) => {
+                  let sum = context.chart._metasets[0].total;
+                  let percentage = (value * 100 / sum).toFixed(2) + "%";
+                  return percentage;
+                },
+                color: '#fff'
+              }
+            },
+            layout: {
+              padding: {
+                left: 20,
+                right: 20,
+                top: 20,
+                bottom: 20
+              }
+            }
+          }
+        });
+      }
+    }
+
+    // Función para popular el combo box con categorías
+    function populateCategorySelect() {
+      if (!data) {
+        console.error('No hay datos disponibles en localStorage.');
+        return;
+      }
+
+      const categories = [...new Set(data.map(item => item.category))];
+      const select = document.getElementById('categorySelect');
+      if (!select) {
+        console.error('No se encontró el elemento select.');
+        return;
+      }
+
+      select.innerHTML = '';
+      categories.forEach(category => {
+        const option = document.createElement('option');
+        option.value = category;
+        option.textContent = category;
+        select.appendChild(option);
+      });
+    }
+
+    // Inicialización
+    function init() {
+      populateCategorySelect();
+
+      document.getElementById('categorySelect').addEventListener('change', (event) => {
+        updatePieChart(event.target.value);
+        updateTopProductsChart()
+      });
+
+      // Cargar el primer gráfico
+      const defaultCategory = document.getElementById('categorySelect')?.value;
+      if (defaultCategory) {
+        updatePieChart(defaultCategory);
+        updateTopProductsChart();
+        processDataProductsOrderedChart()
+      }
+      // Procesar datos para los gráficos
+
+    }
+
+    document.addEventListener('DOMContentLoaded', init);
+
+  </script>
+
+  <script>
+    var months2 = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
+    var homepageFeaturedPerMonth = new Array(12).fill(0);
+    var socialMediaPromoPerMonth = new Array(12).fill(0);
+
+    // Agrupar los datos por mes para los canales promocionales
+    data.forEach(item => {
+      var monthIndex = parseInt(item.month) - 1; // Convertir el mes a índice (0-11)
+      if (item.homepage_featured === "1") {
+        homepageFeaturedPerMonth[monthIndex] += parseInt(item.num_orders_predict);
+      }
+      if (item.social_media_promotion === "1") {
+        socialMediaPromoPerMonth[monthIndex] += parseInt(item.num_orders_predict);
+      }
+    });
+
+    // Configurar el gráfico de radar
+    var ctx = document.getElementById('promotionRadarChart').getContext('2d');
+    var promotionRadarChart = new Chart(ctx, {
+      type: 'radar',
+      data: {
+        labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+        datasets: [{
+          label: 'Homepage Featured',
+          data: homepageFeaturedPerMonth,
+          backgroundColor: 'rgba(54, 162, 235, 0.2)',
+          borderColor: 'rgba(54, 162, 235, 1)',
+          borderWidth: 2,
+          pointBackgroundColor: 'rgba(54, 162, 235, 1)',
+          pointBorderColor: '#fff',
+          pointHoverBackgroundColor: '#fff',
+          pointHoverBorderColor: 'rgba(54, 162, 235, 1)',
+        }, {
+          label: 'Social Media Promotion',
+          data: socialMediaPromoPerMonth,
+          backgroundColor: 'rgba(255, 99, 132, 0.2)',
+          borderColor: 'rgba(255, 99, 132, 1)',
+          borderWidth: 2,
+          pointBackgroundColor: 'rgba(255, 99, 132, 1)',
+          pointBorderColor: '#fff',
+          pointHoverBackgroundColor: '#fff',
+          pointHoverBorderColor: 'rgba(255, 99, 132, 1)',
+        }]
+      },
+      options: {
+        scale: {
+          ticks: {
+            beginAtZero: true
+          }
+        },
+        responsive: true,
+        maintainAspectRatio: false,
+        legend: {
+          position: 'bottom'
+        }
+      }
+    });
+  </script>
+
+
+  <script>
+    // Variable global para almacenar el gráfico
+    let topProductsChart = null;
+
+    // Función para filtrar datos por categoría
+    function filterDataByCategory(category) {
+      return data.filter(item => item.category === category);
+    }
+
+    // Función para contar productos por ID y ordenar por cantidad
+    function countAndSortProductsByCategory4(filteredData) {
+      const productCounts = filteredData.reduce((acc, item) => {
+        const productId = item.product_id.trim();
+        const numOrders = parseInt(item.num_orders_predict) || 0;
+
+        if (!acc[productId]) {
+          acc[productId] = {
+            product_id: productId,
+            count: 0,
+            product_name: item.product_name || productId
+          };
+        }
+        acc[productId].count += numOrders;
+
+        return acc;
+      }, {});
+
+      return Object.values(productCounts)
+        .sort((a, b) => b.count - a.count)
+        .slice(0, 4); // Obtener solo los 4 productos más pedidos
+    }
+
+    // Función para obtener los 4 productos más comprados por categoría
+    function getTopProductsByCategory(category) {
+      if (!data) {
+        console.error('No hay datos disponibles en localStorage.');
+        return;
+      }
+
+      const filteredData = filterDataByCategory(category);
+      const sortedProducts = countAndSortProductsByCategory4(filteredData);
+
+      console.log(sortedProducts); // Debug: Verificar productos ordenados
+
+      // Hacer la petición para obtener los nombres de los productos
       $.ajax({
         url: './data/products.csv',
         dataType: 'text',
@@ -900,24 +991,41 @@
 
           for (var i = 1; i < allTextLines.length; i++) {
             var data = allTextLines[i].split(',');
-            if (data.length == headers.length) {
+            if (data.length === headers.length) {
               var tarr = {};
               for (var j = 0; j < headers.length; j++) {
-                tarr[headers[j]] = data[j];
+                tarr[headers[j].trim()] = data[j].trim();
               }
               productLines.push(tarr);
             }
           }
 
-          var topProductNames = topProducts.map(productId => {
-            var product = productLines.find(p => p['product_id'] == productId);
-            return product ? product['description'] : 'Unknown';
+          const topProductNames = sortedProducts.map(product => {
+            const productId = product.product_id;
+            const productDetail = productLines.find(p => p['product_id'] === productId);
+            return productDetail ? productDetail['description'] : 'M12 FUEL 1/2" RATCHET 2 BATTERY KIT, CORDLESS, 12V DC, 60 FT-LB FASTENING TORQ. MILWAUKEE 2558-22';
           });
 
-          displayTopProducts(topProductNames, topProducts.map(id => productCounts[id]));
-          displayTopProductsChart(topProductNames, topProducts.map(id => productCounts[id]));
+          // Mostrar los productos más comprados
+          displayTopProducts(topProductNames, sortedProducts.map(product => product.count));
+          displayTopProductsChart(topProductNames, sortedProducts.map(product => product.count));
         }
       });
+    }
+
+    // Función para actualizar los gráficos después de seleccionar una categoría
+    function updateTopProductsChart() {
+      const selectedCategory = $('#categorySelect').val();
+      if (selectedCategory) {
+        getTopProductsByCategory(selectedCategory);
+      } else {
+        // Limpiar la visualización si no hay categoría seleccionada
+        displayTopProducts([], []);
+        if (topProductsChart) {
+          topProductsChart.destroy();
+          topProductsChart = null; // Resetear el gráfico
+        }
+      }
     }
 
     function displayTopProducts(names, counts) {
@@ -927,183 +1035,86 @@
       names.forEach((name, index) => {
         var count = counts[index];
         container.append(`
-      <div class="d-flex">
-        <div class="avatar">
-          <img src="assets/img/logoproduct.svg" alt="..." class="avatar-img rounded-circle" />
-        </div>
-        <div class="flex-1 pt-1 ms-2">
-          <h6 class="fw-bold mb-1">${name}</h6>
-          <small class="text-muted">ID: ${index + 1}</small>
-        </div>
-        <div class="d-flex ms-auto align-items-center">
-          <h4 class="text-info fw-bold">+${count}</h4>
-        </div>
-      </div>
-      <div class="separator-dashed"></div>
-    `);
+                <div class="d-flex">
+                    <div class="avatar">
+                        <img src="assets/img/logoproduct.svg" alt="..." class="avatar-img rounded-circle" />
+                    </div>
+                    <div class="flex-1 pt-1 ms-2">
+                        <h6 class="fw-bold mb-1">${name}</h6>
+                        <small class="text-muted">ID: ${index + 1}</small> <!-- Mostrar ID -->
+                    </div>
+                    <div class="d-flex ms-auto align-items-center">
+                        <h4 class="text-info fw-bold">+${count}</h4>
+                    </div>
+                </div>
+                <div class="separator-dashed"></div>
+            `);
       });
     }
 
     function displayTopProductsChart(names, counts) {
-      var topProductsChart = new Chart(document.getElementById('topProductsChart').getContext('2d'), {
-        type: 'bar',
-        data: {
-          labels: names,
-          datasets: [{
-            label: 'Pedidos',
-            backgroundColor: '#1d7af3',
-            borderColor: '#1d7af3',
-            data: counts,
-          }]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          legend: {
-            position: 'right', // Leyenda a la derecha
-            labels: {
-              fontColor: 'rgb(154, 154, 154)',
-              fontSize: 11,
-              usePointStyle: true,
-              padding: 20
-            }
-          },
-          scales: {
-            yAxes: [{
-              ticks: {
-                beginAtZero: true,
-                stepSize: 1
-              }
+      const ctx = document.getElementById('topProductsChart').getContext('2d');
+      if (topProductsChart) {
+        // Si el gráfico ya existe, simplemente actualiza los datos
+        topProductsChart.data.labels = names;
+        topProductsChart.data.datasets[0].data = counts;
+        topProductsChart.update();
+      } else {
+        // Si el gráfico no existe, créalo
+        topProductsChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: names,
+            datasets: [{
+              label: 'Pedidos',
+              backgroundColor: '#1d7af3',
+              borderColor: '#1d7af3',
+              data: counts,
             }]
           },
-          layout: {
-            padding: {
-              left: 20,
-              right: 20,
-              top: 20,
-              bottom: 20
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            legend: {
+              position: 'right',
+              labels: {
+                fontColor: 'rgb(154, 154, 154)',
+                fontSize: 11,
+                usePointStyle: true,
+                padding: 20
+              }
+            },
+            scales: {
+              yAxes: [{
+                ticks: {
+                  beginAtZero: true,
+                  stepSize: 1
+                }
+              }]
+            },
+            layout: {
+              padding: {
+                left: 20,
+                right: 20,
+                top: 20,
+                bottom: 20
+              }
             }
           }
-        }
-      });
+        });
+      }
     }
+  </script>
 
-    function processProductsOrderedChartData(data) {
-      // Filtrar los datos para Oct (10), Nov (11), Dec (12)
-      var filteredData = data.filter(item => {
-        var month = parseInt(item['month']);
-        return month === 10 || month === 11 || month === 12;
-      });
+  <script>
+    function processDataProductsOrderedChart() {
 
-      // Agrupar los datos por storage_id y mes
-      var groupedData = {
-        '101': { 'Oct': 0, 'Nov': 0, 'Dec': 0 },
-        '102': { 'Oct': 0, 'Nov': 0, 'Dec': 0 },
-        '103': { 'Oct': 0, 'Nov': 0, 'Dec': 0 }
-      };
-
-      filteredData.forEach(item => {
-        var month = parseInt(item['month']);
-        var storageId = item['storage_id'];
-        var numOrders = parseInt(item['num_orders']);
-
-        if (storageId in groupedData) {
-          if (month === 10) groupedData[storageId]['Oct'] += numOrders;
-          if (month === 11) groupedData[storageId]['Nov'] += numOrders;
-          if (month === 12) groupedData[storageId]['Dec'] += numOrders;
-        }
-      });
-
-      var ctx = document.getElementById('statisticsChart');
-      if (ctx === null) {
-        console.error("No se encontró el canvas con ID 'statisticsChart'");
+      // Comprobar si hay datos disponibles
+      if (!data) {
+        console.error("No hay datos disponibles en localStorage.");
         return;
       }
 
-      var chart = new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: ['Oct', 'Nov', 'Dec'],
-          datasets: [
-            {
-              label: 'Chorrillos',
-              borderColor: '#1d7af3',
-              pointBorderColor: '#FFF',
-              pointBackgroundColor: '#1d7af3',
-              pointBorderWidth: 2,
-              pointHoverRadius: 4,
-              pointHoverBorderWidth: 1,
-              pointRadius: 4,
-              backgroundColor: 'rgba(29, 122, 243, 0.1)', // Sombreado
-              fill: true,
-              borderWidth: 2,
-              data: [groupedData['101']['Oct'], groupedData['101']['Nov'], groupedData['101']['Dec']]
-            },
-            {
-              label: 'Arequipa',
-              borderColor: '#f3545d',
-              pointBorderColor: '#FFF',
-              pointBackgroundColor: '#f3545d',
-              pointBorderWidth: 2,
-              pointHoverRadius: 4,
-              pointHoverBorderWidth: 1,
-              pointRadius: 4,
-              backgroundColor: 'rgba(243, 84, 93, 0.1)', // Sombreado
-              fill: true,
-              borderWidth: 2,
-              data: [groupedData['102']['Oct'], groupedData['102']['Nov'], groupedData['102']['Dec']]
-            },
-            {
-              label: 'Lima',
-              borderColor: '#fdaf4b',
-              pointBorderColor: '#FFF',
-              pointBackgroundColor: '#fdaf4b',
-              pointBorderWidth: 2,
-              pointHoverRadius: 4,
-              pointHoverBorderWidth: 1,
-              pointRadius: 4,
-              backgroundColor: 'rgba(253, 175, 75, 0.1)', // Sombreado
-              fill: true,
-              borderWidth: 2,
-              data: [groupedData['103']['Oct'], groupedData['103']['Nov'], groupedData['103']['Dec']]
-            }
-          ]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          legend: {
-            position: 'bottom', // Leyenda abajo
-            labels: {
-              padding: 10,
-              fontColor: '#1d7af3'
-            }
-          },
-          tooltips: {
-            bodySpacing: 4,
-            mode: 'nearest',
-            intersect: 0,
-            position: 'nearest',
-            xPadding: 10,
-            yPadding: 10,
-            caretPadding: 10
-          },
-          layout: {
-            padding: { left: 15, right: 15, top: 15, bottom: 15 }
-          },
-          scales: {
-            yAxes: [{
-              ticks: {
-                beginAtZero: true
-              }
-            }]
-          }
-        }
-      });
-
-    }
-
-    function processDataProductsOrderedChart(data) {
       // Mapear los números de mes a nombres de mes
       const monthNames = ['', 'Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
 
@@ -1211,15 +1222,6 @@
     }
   </script>
 
-  <script>
-    function logout() {
-
-      localStorage.clear();
-      sessionStorage.clear();
-      window.location.href = './index.html';
-    }
-    document.getElementById('logoutButton').addEventListener('click', logout);
-  </script>
 </body>
 
 </html>
