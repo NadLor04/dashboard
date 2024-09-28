@@ -359,13 +359,12 @@
                 <i class="icon-arrow-right"></i>
               </li>
               <li class="nav-item">
-                <a href="#">Dashboard con datos de prueba</a>
+                <a href="#">Dashboard con datos de entrenamiento</a>
               </li>
             </ul>
           </div>
           <div class="page-category">
             <!-- Card -->
-
             <div class="row">
               <div class="col-sm-6 col-md-3">
                 <div class="card card-stats card-primary card-round">
@@ -573,7 +572,7 @@
       </div>
     </footer>
   </div>
-
+  </div>
   <!--   Core JS Files   -->
   <script src="assets/js/core/jquery-3.7.1.min.js"></script>
   <script src="assets/js/core/popper.min.js"></script>
@@ -615,7 +614,7 @@
   <script>
     $(document).ready(function () {
       $.ajax({
-        url: './data/Resultado_modelo_test.csv',
+        url: './data/Resultado_modelo_train.csv',
         dataType: 'text',
         contentType: "text/plain; charset=utf-8",
         success: function (data) {
@@ -656,13 +655,13 @@
       $('#total_precio_venta').text('S/. ' + sum_precio_venta.toFixed(2));
 
       // Procesar datos para el gráfico de líneas (Ganancias Mensuales)
-      processLineChartData(lines);
+      processDataForLineChart(lines);
       // Procesar datos para el gráfico de pie
       processDataForPieChart(lines);
       // Procesar datos para los gráficos
       getTopProducts(lines);
       // Procesar datos para el gráfico de líneas (Productos pedidos por storage_id)
-      processProductsOrderedChartData(lines);
+      processDataProductsOrderedChart(lines);
     }
 
     function processLineChartData(data) {

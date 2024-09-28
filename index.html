@@ -2,426 +2,195 @@
 <html lang="en">
 
 <head>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Dashboard</title>
-  <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
-  <link rel="icon" href="assets/img/logo-efc.png" type="image/x-icon" />
-
-  <!-- Fonts and icons -->
-  <script src="assets/js/plugin/webfont/webfont.min.js"></script>
-  <script>
-    WebFont.load({
-      google: { "families": ["Public Sans:300,400,500,600,700"] },
-      custom: { "families": ["Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['assets/css/fonts.min.css'] },
-      active: function () {
-        sessionStorage.fonts = true;
-      }
-    });
-  </script>
-
-  <!-- CSS Files -->
-  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/css/plugins.min.css" />
-  <link rel="stylesheet" href="assets/css/kaiadmin.min.css" />
-
-  <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link rel="stylesheet" href="assets/css/demo.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in || Sign up</title>
+    <!-- font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/login.css">
 </head>
 
 <body>
-  <div class="wrapper">
-    <!-- Sidebar -->
-    <div class="sidebar" data-background-color="dark">
-      <div class="sidebar-logo">
-        <!-- Logo Header -->
-        <div class="logo-header" data-background-color="dark2">
-          <a href="./index.html" class="logo">
-            <img src="assets/img/efc-logo.png" alt="navbar brand" class="navbar-brand" height="55" />
-          </a>
-          <div class="nav-toggle">
-            <button class="btn btn-toggle toggle-sidebar">
-              <i class="gg-menu-right"></i>
-            </button>
-            <button class="btn btn-toggle sidenav-toggler">
-              <i class="gg-menu-left"></i>
-            </button>
-          </div>
-          <button class="topbar-toggler more">
-            <i class="gg-more-vertical-alt"></i>
-          </button>
+
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form id="registerForm">
+                <h1>¡Registrate!</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>o usa tu email para registrarte</span>
+                <div class="infield">
+                    <input type="text" placeholder="Nombre" id="regName" required />
+                </div>
+                <div class="infield">
+                    <input type="email" placeholder="Correo" id="regEmail" required />
+                </div>
+                <div class="infield">
+                    <input type="password" placeholder="Contraseña" id="regPassword" required />
+                </div>
+                <button type="submit">Registrarme</button>
+            </form>
         </div>
-        <!-- End Logo Header -->
-      </div>
-      <div class="sidebar-wrapper scrollbar scrollbar-inner">
-        <div class="sidebar-content">
-          <ul class="nav nav-secondary">
-            <li class="nav-section">
-              <span class="sidebar-mini-icon">
-                <i class="fa fa-ellipsis-h"></i>
-              </span>
-              <h4 class="text-section">Visualización de datos</h4>
-            </li>
-
-            <li class="nav-item active">
-              <a data-bs-toggle="collapse" href="#dashboard" class="collapsed" aria-expanded="false">
-                <i class="fas fa-home"></i>
-                <p>Dashboard</p>
-                <span class="caret"></span>
-              </a>
-              <div class="collapse" id="dashboard">
-                <ul class="nav nav-collapse">
-                    <li>
-                      <a href="./files.html">
-                        <span class="sub-item">Importar archivo de datos</span>
-                      </a>
-                    </li>
-                  </ul>
-                <ul class="nav nav-collapse">
-                  <li>
-                    <a href="./dashboard.html">
-                      <span class="sub-item">Modelo predictivo aplicado con datos de entrenamiento</span>
-                    </a>
-                  </li>
-                </ul>
-                <ul class="nav nav-collapse">
-                  <li>
-                    <a href="./dashboard2.html">
-                      <span class="sub-item">Modelo predictivo aplicado con datos de prueba</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li class="nav-section">
-              <span class="sidebar-mini-icon">
-                <i class="fa fa-ellipsis-h"></i>
-              </span>
-              <h4 class="text-section">Negocio</h4>
-            </li>
-
-            <li class="nav-item">
-              <a href="./nosotros.html">
-                <i class="fas fa-briefcase"></i>
-                <p>Nosotros</p>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a data-bs-toggle="collapse" href="#datos">
-                <i class="fas fa-th-list"></i>
-                <p>Tablas de datos</p>
-                <span class="caret"></span>
-              </a>
-              <div class="collapse" id="datos">
-                <ul class="nav nav-collapse">
-                  <li>
-                    <a href="./products.html">
-                      <span class="sub-item">Productos</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="./404.html">
-                      <span class="sub-item">Almacenes</span>
-                    </a>
-                  </li>
-              
-                </ul>
-              </div>
-            </li>
-
-          </ul>
+        <div class="form-container sign-in-container">
+            <form id="loginForm">
+                <h1>Iniciar sesión</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>o usa tu cuenta</span>
+                <div class="infield">
+                    <input type="email" placeholder="Correo" id="loginEmail" required />
+                </div>
+                <div class="infield">
+                    <input type="password" placeholder="Contraseña" id="loginPassword" required />
+                </div>
+                <div class="combobox">
+                    <div class="connect">
+                        <input type="checkbox" id="rememberMe">
+                        Mantenerme conectado
+                    </div>
+                </div>
+                <a href="#" class="forgot">¿Olvidaste tu contraseña?</a>
+                <button type="submit">Ingresar</button>
+            </form>
         </div>
-      </div>
-    </div>
-    <!-- End Sidebar -->
-
-    <div class="main-panel">
-      <div class="main-header">
-        <div class="main-header-logo">
-          <!-- Logo Header -->
-          <div class="logo-header" data-background-color="dark2">
-            <a href="./main.html" class="logo">
-              <img src="assets/css/bootstrap.min.css" alt="navbar brand" class="navbar-brand" height="20" />
-            </a>
-            <div class="nav-toggle">
-              <button class="btn btn-toggle toggle-sidebar">
-                <i class="gg-menu-right"></i>
-              </button>
-              <button class="btn btn-toggle sidenav-toggler">
-                <i class="gg-menu-left"></i>
-              </button>
+        <div class="overlay-container" id="overlayCon">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>¡Bienvenido!</h1>
+                    <p>Ingresa y mantente conectado con nosotros</p>
+                    <button id="switchToSignIn">Ingresar</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hola, amigo!</h1>
+                    <p>Ingresa tus datos personales y empieza el recorrido con nosotros</p>
+                    <button id="switchToSignUp">Registrarme</button>
+                </div>
             </div>
-            <button class="topbar-toggler more">
-              <i class="gg-more-vertical-alt"></i>
-            </button>
-          </div>
-          <!-- End Logo Header -->
+            <button id="overlayBtn"></button>
         </div>
-        <!-- Navbar Header -->
-        <nav class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bottom">
-          <div class="container-fluid">
-            <nav class="navbar navbar-header-left navbar-expand-lg navbar-form nav-search p-0 d-none d-lg-flex">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <button type="submit" class="btn btn-search pe-1">
-                    <i class="fa fa-search search-icon"></i>
-                  </button>
-                </div>
-                <input type="text" placeholder="Buscar ..." class="form-control" />
-              </div>
-            </nav>
-
-            <ul class="navbar-nav topbar-nav ms-md-auto align-items-center">
-              <li class="nav-item topbar-icon dropdown hidden-caret d-flex d-lg-none">
-                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-                  aria-expanded="false" aria-haspopup="true">
-                  <i class="fa fa-search"></i>
-                </a>
-                <ul class="dropdown-menu dropdown-search animated fadeIn">
-                  <form class="navbar-left navbar-form nav-search">
-                    <div class="input-group">
-                      <input type="text" placeholder="Buscar ..." class="form-control" />
-                    </div>
-                  </form>
-                </ul>
-              </li>
-              <li class="nav-item topbar-icon dropdown hidden-caret">
-                <a class="nav-link dropdown-toggle" href="#" id="messageDropdown" role="button"
-                  data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="fa fa-envelope"></i>
-                </a>
-                <ul class="dropdown-menu messages-notif-box animated fadeIn" aria-labelledby="messageDropdown">
-                  <li>
-                    <div class="dropdown-title d-flex justify-content-between align-items-center">
-                      Mensajes
-                      <a href="#" class="small">Marca como Leidos</a>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="message-notif-scroll scrollbar-outer">
-                      <div class="notif-center">
-
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <a class="see-all" href="javascript:void(0);">Ver todos los mensajes<i class="fa fa-angle-right"></i>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item topbar-icon dropdown hidden-caret">
-                <a class="nav-link dropdown-toggle" href="#" id="notifDropdown" role="button" data-bs-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">
-                  <i class="fa fa-bell"></i>
-                  <span class="notification">4</span>
-                </a>
-                <ul class="dropdown-menu notif-box animated fadeIn" aria-labelledby="notifDropdown">
-                  <li>
-                    <div class="dropdown-title">Tienes 3 notificaciones</div>
-                  </li>
-                  <li>
-                    <div class="notif-scroll scrollbar-outer">
-                      <div class="notif-center">
-                        <a href="#">
-                          <div class="notif-icon notif-primary">
-                            <i class="fa fa-truck-loading"></i>
-                          </div>
-                          <div class="notif-content">
-                            <span class="block"> Nuevo pedido en Arequipa </span>
-                            <span class="time">hace 5 minutos</span>
-                          </div>
-                        </a>
-                        <a href="#">
-                          <div class="notif-icon notif-success">
-                            <i class="fa fa-comment"></i>
-                          </div>
-                          <div class="notif-content">
-                            <span class="block"> Actualización de tabla de productos </span>
-                            <span class="time">hace 1 hora</span>
-                          </div>
-                        </a>
-                        <a href="#">
-                          <div class="notif-img">
-                            <img src="assets/img/profile2.jpg" alt="Img Profile" />
-                          </div>
-                          <div class="notif-content">
-                            <span class="block"> Reunión para gestión de inventario </span>
-                            <span class="time">hace 2 dias</span>
-                          </div>
-                        </a>
-       
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <a class="see-all" href="javascript:void(0);">Ver todas las notificaciones<i class="fa fa-angle-right"></i>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item topbar-icon dropdown hidden-caret">
-                <a class="nav-link" data-bs-toggle="dropdown" href="#" aria-expanded="false">
-                  <i class="fas fa-layer-group"></i>
-                </a>
-                <div class="dropdown-menu quick-actions animated fadeIn">
-                  <div class="quick-actions-header">
-                    <span class="title mb-1">Acciones Rápidas</span>
-                    <span class="subtitle op-7">Shortcuts</span>
-                  </div>
-                  <div class="quick-actions-scroll scrollbar-outer">
-                    <div class="quick-actions-items">
-                      <div class="row m-0">
-                        <a class="col-6 col-md-4 p-0" href="#">
-                          <div class="quick-actions-item">
-                            <div class="avatar-item bg-danger rounded-circle">
-                              <i class="far fa-calendar-alt"></i>
-                            </div>
-                            <span class="text">Calendario</span>
-                          </div>
-                        </a>
-                        <a class="col-6 col-md-4 p-0" href="#">
-                          <div class="quick-actions-item">
-                            <div class="avatar-item bg-warning rounded-circle">
-                              <i class="fas fa-map"></i>
-                            </div>
-                            <span class="text">Mapa</span>
-                          </div>
-                        </a>
-                        <a class="col-6 col-md-4 p-0" href="#">
-                          <div class="quick-actions-item">
-                            <div class="avatar-item bg-success rounded-circle">
-                              <i class="fas fa-envelope"></i>
-                            </div>
-                            <span class="text">Email</span>
-                          </div>
-                        </a>
-                
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-
-              <li class="nav-item topbar-user dropdown hidden-caret">
-                <a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#" aria-expanded="false">
-                  <div class="avatar-sm">
-                    <img src="assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle" />
-                  </div>
-                  <span class="profile-username">
-                    <span class="op-7">Bienvenido,</span> <span class="fw-bold">Juan</span>
-                  </span>
-                </a>
-                <ul class="dropdown-menu dropdown-user animated fadeIn">
-                  <div class="dropdown-user-scroll scrollbar-outer">
-                    <li>
-                      <div class="user-box">
-                        <div class="avatar-lg">
-                          <img src="assets/img/profile.jpg" alt="image profile" class="avatar-img rounded" />
-                        </div>
-                        <div class="u-text">
-                          <h4>Juan Lopéz</h4>
-                          <p class="text-muted">jlopez@efc.com.pe</p>
-                          <a href="./404.html" class="btn btn-xs btn-secondary btn-sm">Ver perfil</a>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Mi perfil</a>
-                      <a class="dropdown-item" href="#">Bandeja de mensajes</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Configuración</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Cerrar sesión</a>
-                    </li>
-                  </div>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </nav>
-        <!-- End Navbar -->
-      </div>
-      <div class="container">
-        <div class="page-inner">
-          <div class="page-header">
-            <h4 class="page-title">Home</h4>
-            <ul class="breadcrumbs">
-              <li class="nav-home">
-                <a href="#">
-                  <i class="icon-home"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="page-category">
-
-          </div>
-        </div>
-      </div>
-
-
-      <footer class="footer">
-        <div class="container-fluid">
-          <nav class="pull-left">
-            <ul class="nav">
-              <li class="nav-item">
-                <a class="nav-link" href="http://www.themekita.com"> EFC - Especialista en Abastecimiento Industrial </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#"> Ayuda</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#"> Copyright © </a>
-              </li>
-            </ul>
-          </nav>
-          <div class="copyright ms-auto">
-            2024, made with <i class="fa fa-heart heart text-danger"></i> by
-            <a href="http://www.themekita.com">ThemeKita Template</a>
-          </div>
-        </div>
-      </footer>
     </div>
-  </div>
-  <!--   Core JS Files   -->
-  <script src="assets/js/core/jquery-3.7.1.min.js"></script>
-  <script src="assets/js/core/popper.min.js"></script>
-  <script src="assets/js/core/bootstrap.min.js"></script>
 
+    <script>
+        const container = document.getElementById('container');
+        const overlayCon = document.getElementById('overlayCon');
+        const overlayBtn = document.getElementById('overlayBtn');
+        const switchToSignIn = document.getElementById('switchToSignIn');
+        const switchToSignUp = document.getElementById('switchToSignUp');
 
+        // Función para alternar panel de registro/inicio
+        overlayBtn.addEventListener('click', () => {
+            container.classList.toggle('right-panel-active');
+        });
 
-  <!-- jQuery Scrollbar -->
-  <script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+        // Cambiar a panel de inicio de sesión
+        switchToSignIn.addEventListener('click', () => {
+            container.classList.remove('right-panel-active');
+        });
 
-  <!-- Chart JS -->
-  <script src="assets/js/plugin/chart.js/chart.min.js"></script>
+        // Cambiar a panel de registro
+        switchToSignUp.addEventListener('click', () => {
+            container.classList.add('right-panel-active');
+        });
 
-  <!-- jQuery Sparkline -->
-  <script src="assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+        // Manejo de registro
+        registerForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name = document.getElementById('regName').value;
+            const email = document.getElementById('regEmail').value;
+            const password = document.getElementById('regPassword').value;
 
-  <!-- Chart Circle -->
-  <script src="assets/js/plugin/chart-circle/circles.min.js"></script>
+            // Comprobación si el email ya está registrado
+            if (!localStorage.getItem(email)) {
+                const user = { name, email, password };
+                localStorage.setItem(email, JSON.stringify(user));
+                alert('Registro exitoso. Ahora puedes iniciar sesión.');
+                registerForm.reset();
+            } else {
+                alert('El correo ya está registrado.');
+            }
+        });
 
-  <!-- Datatables -->
-  <script src="assets/js/plugin/datatables/datatables.min.js"></script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const registerForm = document.getElementById('registerForm');
+            const loginForm = document.getElementById('loginForm');
 
-  <!-- Bootstrap Notify -->
-  <script src="assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+            // Manejo de registro
+            registerForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const name = document.getElementById('regName').value;
+                const email = document.getElementById('regEmail').value;
+                const password = document.getElementById('regPassword').value;
 
-  <!-- jQuery Vector Maps -->
-  <script src="assets/js/plugin/jsvectormap/jsvectormap.min.js"></script>
-  <script src="assets/js/plugin/jsvectormap/world.js"></script>
+                // Comprobación si el email ya está registrado
+                if (!localStorage.getItem(email)) {
+                    const user = { name, email, password };
+                    localStorage.setItem(email, JSON.stringify(user));
+                    alert('Registro exitoso. Ahora puedes iniciar sesión.');
+                    registerForm.reset();
+                } else {
+                    alert('El correo ya está registrado.');
+                }
+            });
 
-  <!-- Google Maps Plugin -->
-  <script src="assets/js/plugin/gmaps/gmaps.js"></script>
+            // Manejo de inicio de sesión
+            loginForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const email = document.getElementById('loginEmail').value;
+                const password = document.getElementById('loginPassword').value;
+                const rememberMe = document.getElementById('rememberMe').checked;
 
-  <!-- Sweet Alert -->
-  <script src="assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+                const storedUser = JSON.parse(localStorage.getItem(email));
+                if (storedUser && storedUser.password === password) {
+                    alert('Inicio de sesión exitoso');
 
-  <!-- Kaiadmin JS -->
-  <script src="assets/js/kaiadmin.min.js"></script>
+                    // Guarda la información del usuario en el localStorage
+                    localStorage.setItem('currentUser', JSON.stringify(storedUser));
+
+                    // Solo guarda el 'rememberMe' si está marcado
+                    if (rememberMe) {
+                        localStorage.setItem('rememberMe', email);
+                    }
+
+                    loginForm.reset();
+                    window.location.href = 'main.html';
+                } else {
+                    alert('Correo o contraseña incorrectos.');
+                }
+            });
+
+            // Comprobación de sesión mantenida
+            window.onload = function () {
+                // Verifica si el usuario seleccionó "Mantenerme conectado"
+                const rememberedEmail = localStorage.getItem('rememberMe');
+                if (rememberedEmail) {
+                    const storedUser = JSON.parse(localStorage.getItem(rememberedEmail));
+                    if (storedUser) {
+                        // Autenticación automática para "Mantenerme conectado"
+                        alert(`Bienvenido de nuevo, ${storedUser.name}!`);
+                        localStorage.setItem('currentUser', JSON.stringify(storedUser));
+                        window.location.href = 'main.html';
+                    }
+                } else {
+                    // Si no está "Mantenerme conectado", revisa si hay información en currentUser
+                    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+                    if (currentUser) {
+                        document.getElementById('userName').textContent = currentUser.name.split(' ')[0];
+                        document.getElementById('userEmail').textContent = currentUser.email;
+                    }
+                }
+            };
+        });
+      
+    </script>
 
 </body>
 

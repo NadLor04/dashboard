@@ -324,8 +324,7 @@
                         <div class="u-text">
                           <h4 id="userName1">Nombre Usuario</h4>
                           <p class="text-muted" id="userEmail">correo@dominio.com</p>
-                          <a href="./404.html" class="btn btn-xs btn-secondary btn-sm">Ver
-                            perfil</a>
+                          <a href="./404.html" class="btn btn-xs btn-secondary btn-sm">Ver perfil</a>
                         </div>
                       </div>
                     </li>
@@ -336,8 +335,7 @@
                       <div class="dropdown-divider"></div>
                       <a class="dropdown-item" href="#">Configuración</a>
                       <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="./index.html" id="logoutButton">Cerrar
-                        sesión</a>
+                      <a class="dropdown-item" href="./index.html" id="logoutButton">Cerrar sesión</a>
                     </li>
                   </div>
                 </ul>
@@ -350,66 +348,22 @@
       <div class="container">
         <div class="page-inner">
           <div class="page-header">
-            <h4 class="page-title">Tabla de datos</h4>
+            <h4 class="page-title">Home</h4>
             <ul class="breadcrumbs">
               <li class="nav-home">
                 <a href="#">
-                  <i class="icon-handbag"></i>
+                  <i class="icon-home"></i>
                 </a>
-              </li>
-              <li class="separator">
-                <i class="icon-arrow-right"></i>
-              </li>
-              <li class="nav-item">
-                <a href="#">Productos</a>
               </li>
             </ul>
           </div>
           <div class="page-category">
 
-            <!-- <div class="col-md-12">
-              <div class="card">
-                <div class="card-header">
-                  <h4 class="card-title">Ingrese la tabla de productos</h4>
-                </div>
-                <div class="card-body">
-                  <form id="upload-form" enctype="multipart/form-data">
-                    <input type="file" id="csv-file" name="file" accept=".csv">
-                    <br><br>
-                    <button class="btn btn-black" type="submit">
-                      <span class="btn-label">
-                        <i class="fa fa-archive"></i>
-                      </span>
-                      Subir
-                    </button>
-                  </form>
-                </div>
-              </div>
-            </div> -->
-
-            <div class="col-md-12">
-              <div class="card">
-                <div class="card-header">
-                  <h4 class="card-title">Tabla de productos</h4>
-                </div>
-                <div class="card-body">
-                  <div class="table-responsive">
-                    <table id="multi-filter-select" class="display table table-striped table-hover">
-                      <thead id="table-head">
-                      </thead>
-                      <tbody id="table-body">
-                      </tbody>
-                      <tfoot id="table-foot">
-                      </tfoot>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
-
         </div>
       </div>
+
+
       <footer class="footer">
         <div class="container-fluid">
           <nav class="pull-left">
@@ -432,17 +386,36 @@
           </div>
         </div>
       </footer>
-
     </div>
-
-
   </div>
-
   <!--   Core JS Files   -->
   <script src="assets/js/core/jquery-3.7.1.min.js"></script>
   <script src="assets/js/core/popper.min.js"></script>
   <script src="assets/js/core/bootstrap.min.js"></script>
+  <script>
+    window.onload = function () {
+      const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+      if (currentUser) {
+        // Muestra solo la primera palabra del nombre y el correo
+        document.getElementById('userName').textContent = currentUser.name.split(' ')[0];
+        document.getElementById('userName1').textContent = currentUser.name;
+        document.getElementById('userEmail').textContent = currentUser.email;
+      }
+    };
 
+    // Lógica para cerrar sesión
+    const logoutButton = document.getElementById('logoutButton');
+    if (logoutButton) { // Asegúrate de que el botón existe antes de añadir el evento
+      logoutButton.addEventListener('click', function () {
+        // Eliminar la información del usuario recordado de localStorage
+        localStorage.removeItem('rememberMe');
+        localStorage.removeItem('currentUser');
+        localStorage.removeItem('csvData');
+        alert('Has cerrado sesión correctamente.');
+        window.location.href = 'index.html'; // Redirigir al login
+      });
+    }
+  </script>
 
 
   <!-- jQuery Scrollbar -->
@@ -473,212 +446,9 @@
   <!-- Sweet Alert -->
   <script src="assets/js/plugin/sweetalert/sweetalert.min.js"></script>
 
-  <!-- Include PapaParse library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
-
   <!-- Kaiadmin JS -->
   <script src="assets/js/kaiadmin.min.js"></script>
-  <!-- <script>
-    document.getElementById('upload-form').addEventListener('submit', function (event) {
-      event.preventDefault();
-      const fileInput = document.getElementById('csv-file');
-      const file = fileInput.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = function (e) {
-          const text = e.target.result;
-          const data = Papa.parse(text, { header: true });
-          const parsedData = data.data.filter(row => Object.keys(row).length > 1); // Filtrar filas vacías
-          displayTable(parsedData);
-        };
-        reader.readAsText(file);
-      }
-    });
 
-    function displayTable(data) {
-      const tableHead = document.getElementById('table-head');
-      const tableBody = document.getElementById('table-body');
-      const tableFoot = document.getElementById('table-foot');
-
-      tableHead.innerHTML = '';
-      tableBody.innerHTML = '';
-      tableFoot.innerHTML = '';
-
-      if (data.length > 0) {
-        const headers = Object.keys(data[0]);
-        const headerRow = document.createElement('tr');
-        const footerRow = document.createElement('tr');
-
-        headers.forEach(header => {
-          const th = document.createElement('th');
-          th.textContent = header;
-          headerRow.appendChild(th);
-
-          const tf = document.createElement('th');
-          footerRow.appendChild(tf);
-        });
-
-        tableHead.appendChild(headerRow);
-        tableFoot.appendChild(footerRow);
-
-        data.forEach(row => {
-          const rowElement = document.createElement('tr');
-          headers.forEach(header => {
-            const td = document.createElement('td');
-            td.textContent = row[header];
-            rowElement.appendChild(td);
-          });
-          tableBody.appendChild(rowElement);
-        });
-
-
-        $('#multi-filter-select').DataTable({
-          destroy: true,
-          pageLength: 5,
-          initComplete: function () {
-            this.api()
-              .columns()
-              .every(function () {
-                var column = this;
-                var select = $(
-                  '<select class="form-select"><option value=""></option></select>'
-                )
-                  .appendTo($(column.footer()).empty())
-                  .on("change", function () {
-                    var val = $.fn.dataTable.util.escapeRegex($(this).val());
-
-                    column
-                      .search(val ? "^" + val + "$" : "", true, false)
-                      .draw();
-                  });
-
-                column
-                  .data()
-                  .unique()
-                  .sort()
-                  .each(function (d, j) {
-                    select.append(
-                      '<option value="' + d + '">' + d + "</option>"
-                    );
-                  });
-              });
-          },
-        });
-      }
-    }
-  </script> -->
-  <script>
-    // Función para cargar el CSV existente desde una ruta en tu proyecto
-    function loadCSV() {
-      fetch('data/products.csv')  // Ruta al archivo CSV en tu proyecto
-        .then(response => response.text())
-        .then(text => {
-          const data = Papa.parse(text, { header: true });
-          const parsedData = data.data.filter(row => Object.keys(row).length > 1); // Filtrar filas vacías
-          displayTable(parsedData);
-        })
-        .catch(error => console.error('Error al cargar el archivo CSV:', error));
-    }
-
-    // Función para mostrar la tabla con los datos del CSV
-    function displayTable(data) {
-      const tableHead = document.getElementById('table-head');
-      const tableBody = document.getElementById('table-body');
-      const tableFoot = document.getElementById('table-foot');
-
-      tableHead.innerHTML = '';
-      tableBody.innerHTML = '';
-      tableFoot.innerHTML = '';
-
-      if (data.length > 0) {
-        const headers = Object.keys(data[0]);
-        const headerRow = document.createElement('tr');
-        const footerRow = document.createElement('tr');
-
-        headers.forEach(header => {
-          const th = document.createElement('th');
-          th.textContent = header;
-          headerRow.appendChild(th);
-
-          const tf = document.createElement('th');
-          footerRow.appendChild(tf);
-        });
-
-        tableHead.appendChild(headerRow);
-        tableFoot.appendChild(footerRow);
-
-        data.forEach(row => {
-          const rowElement = document.createElement('tr');
-          headers.forEach(header => {
-            const td = document.createElement('td');
-            td.textContent = row[header];
-            rowElement.appendChild(td);
-          });
-          tableBody.appendChild(rowElement);
-        });
-
-        $('#multi-filter-select').DataTable({
-          destroy: true,
-          pageLength: 5,
-          initComplete: function () {
-            this.api()
-              .columns()
-              .every(function () {
-                var column = this;
-                var select = $(
-                  '<select class="form-select"><option value=""></option></select>'
-                )
-                  .appendTo($(column.footer()).empty())
-                  .on("change", function () {
-                    var val = $.fn.dataTable.util.escapeRegex($(this).val());
-
-                    column
-                      .search(val ? "^" + val + "$" : "", true, false)
-                      .draw();
-                  });
-
-                column
-                  .data()
-                  .unique()
-                  .sort()
-                  .each(function (d, j) {
-                    select.append(
-                      '<option value="' + d + '">' + d + "</option>"
-                    );
-                  });
-              });
-          },
-        });
-      }
-    }
-
-    // Llamar a la función para cargar el CSV cuando la página cargue
-    document.addEventListener('DOMContentLoaded', loadCSV);
-  </script>
-  <script>
-    window.onload = function () {
-      const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-      if (currentUser) {
-        // Muestra solo la primera palabra del nombre y el correo
-        document.getElementById('userName').textContent = currentUser.name.split(' ')[0];
-        document.getElementById('userName1').textContent = currentUser.name;
-        document.getElementById('userEmail').textContent = currentUser.email;
-      }
-    };
-
-    // Lógica para cerrar sesión
-    const logoutButton = document.getElementById('logoutButton');
-    if (logoutButton) { // Asegúrate de que el botón existe antes de añadir el evento
-      logoutButton.addEventListener('click', function () {
-        // Eliminar la información del usuario recordado de localStorage
-        localStorage.removeItem('rememberMe');
-        localStorage.removeItem('currentUser');
-        localStorage.removeItem('csvData');
-        alert('Has cerrado sesión correctamente.');
-        window.location.href = 'index.html'; // Redirigir al login
-      });
-    }
-  </script>
 </body>
 
 </html>

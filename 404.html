@@ -35,7 +35,7 @@
       <div class="sidebar-logo">
         <!-- Logo Header -->
         <div class="logo-header" data-background-color="dark2">
-          <a href="./index.html" class="logo">
+          <a href="./main.html" class="logo">
             <img src="assets/img/efc-logo.png" alt="navbar brand" class="navbar-brand" height="55" />
           </a>
           <div class="nav-toggle">
@@ -140,7 +140,7 @@
         <div class="main-header-logo">
           <!-- Logo Header -->
           <div class="logo-header" data-background-color="dark2">
-            <a href="./index.html" class="logo">
+            <a href="./main.html" class="logo">
               <img src="assets/css/bootstrap.min.css" alt="navbar brand" class="navbar-brand" height="20" />
             </a>
             <div class="nav-toggle">
@@ -306,40 +306,45 @@
               </li>
 
               <li class="nav-item topbar-user dropdown hidden-caret">
-                <a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#" aria-expanded="false">
-                  <div class="avatar-sm">
-                    <img src="assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle" />
-                  </div>
-                  <span class="profile-username">
-                    <span class="op-7">Bienvenido,</span> <span class="fw-bold">Juan</span>
-                  </span>
+                <a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#"
+                    aria-expanded="false">
+                    <div class="avatar-sm">
+                        <img src="assets/img/user.jpg" alt="..." class="avatar-img rounded-circle" />
+                    </div>
+                    <span class="profile-username">
+                        <span class="op-7">Bienvenido,</span> <span class="fw-bold"
+                            id="userName">Juan</span>
+                    </span>
                 </a>
                 <ul class="dropdown-menu dropdown-user animated fadeIn">
-                  <div class="dropdown-user-scroll scrollbar-outer">
-                    <li>
-                      <div class="user-box">
-                        <div class="avatar-lg">
-                          <img src="assets/img/profile.jpg" alt="image profile" class="avatar-img rounded" />
-                        </div>
-                        <div class="u-text">
-                          <h4>Juan Lopéz</h4>
-                          <p class="text-muted">jlopez@efc.com.pe</p>
-                          <a href="./404.html" class="btn btn-xs btn-secondary btn-sm">Ver perfil</a>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Mi perfil</a>
-                      <a class="dropdown-item" href="#">Bandeja de mensajes</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Configuración</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Cerrar sesión</a>
-                    </li>
-                  </div>
+                    <div class="dropdown-user-scroll scrollbar-outer">
+                        <li>
+                            <div class="user-box">
+                                <div class="avatar-lg">
+                                    <img src="assets/img/user.jpg" alt="image profile"
+                                        class="avatar-img rounded" />
+                                </div>
+                                <div class="u-text">
+                                    <h4 id="userName1">Nombre Usuario</h4>
+                                    <p class="text-muted" id="userEmail">correo@dominio.com</p>
+                                    <a href="./404.html" class="btn btn-xs btn-secondary btn-sm">Ver
+                                        perfil</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Mi perfil</a>
+                            <a class="dropdown-item" href="#">Bandeja de mensajes</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Configuración</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="./index.html" id="logoutButton">Cerrar
+                                sesión</a>
+                        </li>
+                    </div>
                 </ul>
-              </li>
+            </li>
             </ul>
           </div>
         </nav>
@@ -399,7 +404,29 @@
   <script src="assets/js/core/popper.min.js"></script>
   <script src="assets/js/core/bootstrap.min.js"></script>
 
+  <script>
+    window.onload = function () {
+      const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+      if (currentUser) {
+        // Muestra solo la primera palabra del nombre y el correo
+        document.getElementById('userName').textContent = currentUser.name.split(' ')[0];
+        document.getElementById('userName1').textContent = currentUser.name;
+        document.getElementById('userEmail').textContent = currentUser.email;
+      }
+    };
 
+    // Lógica para cerrar sesión
+    const logoutButton = document.getElementById('logoutButton');
+    if (logoutButton) { // Asegúrate de que el botón existe antes de añadir el evento
+      logoutButton.addEventListener('click', function () {
+        // Eliminar la información del usuario recordado de localStorage
+        localStorage.removeItem('rememberMe');
+        localStorage.removeItem('currentUser');
+        alert('Has cerrado sesión correctamente.');
+        window.location.href = 'index.html'; // Redirigir al login
+      });
+    }
+  </script>
 
   <!-- jQuery Scrollbar -->
   <script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>

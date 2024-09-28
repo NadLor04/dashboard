@@ -34,7 +34,7 @@
 			<div class="sidebar-logo">
 				<!-- Logo Header -->
 				<div class="logo-header" data-background-color="dark2">
-					<a href="./index.html" class="logo">
+					<a href="./main.html" class="logo">
 						<img src="assets/img/efc-logo.png" alt="navbar brand" class="navbar-brand" height="55" />
 					</a>
 					<div class="nav-toggle">
@@ -120,7 +120,7 @@
 										</a>
 									</li>
 									<li>
-										<a href="./404.html">
+										<a href="./storages.html">
 											<span class="sub-item">Almacenes</span>
 										</a>
 									</li>
@@ -140,7 +140,7 @@
 				<div class="main-header-logo">
 					<!-- Logo Header -->
 					<div class="logo-header" data-background-color="dark2">
-						<a href="index.html" class="logo">
+						<a href="main.html" class="logo">
 							<img src="assets/css/bootstrap.min.css" alt="navbar brand" class="navbar-brand"
 								height="20" />
 						</a>
@@ -312,10 +312,11 @@
 								<a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#"
 									aria-expanded="false">
 									<div class="avatar-sm">
-										<img src="assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle" />
+										<img src="assets/img/user.jpg" alt="..." class="avatar-img rounded-circle" />
 									</div>
 									<span class="profile-username">
-										<span class="op-7">Bienvenido,</span> <span class="fw-bold">Juan</span>
+										<span class="op-7">Bienvenido,</span> <span class="fw-bold"
+											id="userName">Juan</span>
 									</span>
 								</a>
 								<ul class="dropdown-menu dropdown-user animated fadeIn">
@@ -323,12 +324,12 @@
 										<li>
 											<div class="user-box">
 												<div class="avatar-lg">
-													<img src="assets/img/profile.jpg" alt="image profile"
+													<img src="assets/img/user.jpg" alt="image profile"
 														class="avatar-img rounded" />
 												</div>
 												<div class="u-text">
-													<h4>Juan Lopéz</h4>
-													<p class="text-muted">jlopez@efc.com.pe</p>
+													<h4 id="userName1">Nombre Usuario</h4>
+													<p class="text-muted" id="userEmail">correo@dominio.com</p>
 													<a href="./404.html" class="btn btn-xs btn-secondary btn-sm">Ver
 														perfil</a>
 												</div>
@@ -341,7 +342,8 @@
 											<div class="dropdown-divider"></div>
 											<a class="dropdown-item" href="#">Configuración</a>
 											<div class="dropdown-divider"></div>
-											<a class="dropdown-item" href="#">Cerrar sesión</a>
+											<a class="dropdown-item" href="./index.html" id="logoutButton">Cerrar
+												sesión</a>
 										</li>
 									</div>
 								</ul>
@@ -357,7 +359,7 @@
 						<h4 class="page-title">Dashboard</h4>
 						<ul class="breadcrumbs">
 							<li class="nav-home">
-								<a href="./index.html">
+								<a href="./main.html">
 									<i class="icon-folder"></i>
 								</a>
 							</li>
@@ -529,7 +531,8 @@
 					const text = e.target.result;
 					const data = Papa.parse(text, { header: true });
 					const parsedData = data.data.filter(row => Object.keys(row).length > 1); // Filtrar filas vacías
-					displayTable(parsedData);
+					localStorage.setItem('csvData', JSON.stringify(parsedData)); // Guardar en localStorage
+					displayTable(parsedData); // Mostrar en tabla
 				};
 				reader.readAsText(file);
 			}
@@ -552,7 +555,7 @@
 			const headers = Object.keys(data[0]);
 			const headerRow = $('<tr>');
 			headers.forEach(header => {
-				const th = $('<th>').text(header);
+				const th = $('<th>').text(header).attr('scope', 'col');
 				headerRow.append(th);
 			});
 			thead.append(headerRow);
@@ -581,7 +584,7 @@
 			}
 			resultTable.DataTable({
 				pageLength: 5,
-				autoWidth: false, // Disable automatic column width calculation
+				autoWidth: false,
 				initComplete: function () {
 					this.api().columns().every(function () {
 						var column = this;
@@ -600,6 +603,13 @@
 		}
 
 		$(document).ready(function () {
+			// Cargar los datos guardados en localStorage cuando se carga la página
+			const storedData = localStorage.getItem('csvData');
+			if (storedData) {
+				const parsedData = JSON.parse(storedData);
+				displayTable(parsedData);
+			}
+
 			// Handle file upload
 			$('#csv-file').on('change', function (e) {
 				var file = e.target.files[0];
@@ -623,8 +633,32 @@
 				}
 			});
 		});
-	</script>
 
+	</script>
+	<script>
+		window.onload = function () {
+			const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+			if (currentUser) {
+				// Muestra solo la primera palabra del nombre y el correo
+				document.getElementById('userName').textContent = currentUser.name.split(' ')[0];
+				document.getElementById('userName1').textContent = currentUser.name;
+				document.getElementById('userEmail').textContent = currentUser.email;
+			}
+		};
+
+		// Lógica para cerrar sesión
+		const logoutButton = document.getElementById('logoutButton');
+		if (logoutButton) { // Asegúrate de que el botón existe antes de añadir el evento
+			logoutButton.addEventListener('click', function () {
+				// Eliminar la información del usuario recordado de localStorage
+				localStorage.removeItem('rememberMe');
+				localStorage.removeItem('currentUser');
+				localStorage.removeItem('csvData');
+				alert('Has cerrado sesión correctamente.');
+				window.location.href = 'index.html'; // Redirigir al login
+			});
+		}
+	</script>
 
 </body>
 
