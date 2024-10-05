@@ -85,13 +85,7 @@
                                         </a>
                                     </li>
                                 </ul>
-                                <ul class="nav nav-collapse">
-                                    <li>
-                                        <a href="./dashboard2.html">
-                                            <span class="sub-item">Modelo predictivo aplicado con datos de prueba</span>
-                                        </a>
-                                    </li>
-                                </ul>
+
                             </div>
                         </li>
                         <li class="nav-section">
@@ -471,6 +465,37 @@
                                 <div class="card">
                                     <div class="card-header">
                                         <div class="card-head-row">
+                                            <div class="card-title">Cantidad de productos solicitados por ciudad y
+                                                almacén</div>
+                                            <div class="card-tools">
+                                                <div class="dropdown">
+                                                    <button class="btn btn-icon btn-clean me-0" type="button"
+                                                        id="dropdownMenuButton" data-bs-toggle="dropdown"
+                                                        aria-haspopup="true" aria-expanded="false">
+                                                        <i class="fas fa-ellipsis-h"></i>
+                                                    </button>
+                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                        <a class="dropdown-item" href="#">Ver detalle</a>
+                                                        <a class="dropdown-item" href="#">Descagar</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="chart-container">
+                                            <canvas id="bubbleChart"></canvas>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="card-head-row">
                                             <div class="card-title">Rotación de inventario en almacenes</div>
                                             <div class="card-tools">
                                                 <a href="#" class="btn btn-label-success btn-round btn-sm me-2">
@@ -489,18 +514,49 @@
                                         </div>
                                     </div>
                                     <div class="card-body">
-                                        <div class="chart-container" style="min-height: 375px">
+                                        <div class="chart-container" style="height: 100px">
                                             <canvas id="statisticsChart"></canvas>
                                         </div>
                                         <div id="myChartLegend"></div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-8">
-                                <div class="card">
-                           
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="card">
+                                          <div class="card-body p-3 text-center">
+                                            <div class="text-end text-danger">
+                                              -8%
+                                              <i class="fa fa-chevron-down"></i>
+                                            </div>
+                                            <div class="h1 m-0" id="errorRate">43</div>
+                                            <div class="text-muted mb-3">Tasa de Error Promedio</div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="col-md-4">
+                                        <div class="card">
+                                          <div class="card-body p-3 text-center">
+                                            <div class="text-end text-success">
+                                              3%
+                                              <i class="fa fa-chevron-up"></i>
+                                            </div>
+                                            <div class="h1 m-0" id="accuracyPercentage">17</div>
+                                            <div class="text-muted mb-3">Desvío Promedio</div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="col-md-4">
+                                        <div class="card">
+                                          <div class="card-body p-3 text-center">
+                                            <div class="text-end text-success">
+                                              1%
+                                              <i class="fa fa-chevron-up"></i>
+                                            </div>
+                                            <div class="h1 m-0" id="stockDeviation">7</div>
+                                            <div class="text-muted mb-3">Desvío Promedio Stock</div>
+                                          </div>
+                                        </div>
+                                      </div>
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -518,35 +574,35 @@
 
                         </div>
                     </div>
+
                 </div>
             </div>
-            <footer class="footer">
-                <div class="container-fluid">
-                    <nav class="pull-left">
-                        <ul class="nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="http://www.themekita.com"> EFC - Especialista en
-                                    Abastecimiento
-                                    Industrial
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"> Ayuda</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"> Copyright © </a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <div class="copyright ms-auto">
-                        2024, made with <i class="fa fa-heart heart text-danger"></i> by
-                        <a href="http://www.themekita.com">ThemeKita Template</a>
-                    </div>
-                </div>
-            </footer>
-
         </div>
 
+        <footer class="footer">
+            <div class="container-fluid">
+                <nav class="pull-left">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="http://www.themekita.com"> EFC - Especialista en
+                                Abastecimiento
+                                Industrial
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"> Ayuda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"> Copyright © </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="copyright ms-auto">
+                    2024, made with <i class="fa fa-heart heart text-danger"></i> by
+                    <a href="http://www.themekita.com">ThemeKita Template</a>
+                </div>
+            </div>
+        </footer>
 
     </div>
 
@@ -588,6 +644,21 @@
     <!-- Kaiadmin JS -->
     <script src="assets/js/kaiadmin.min.js"></script>
     <script>
+        function loadCSV() {
+            const fileInput = document.getElementById('csv-file');
+            const file = 'data/Resultado_train.csv'; // Aquí debes poner la ruta del archivo CSV
+
+            fetch(file)
+                .then(response => response.text())
+                .then(text => {
+                    const data = Papa.parse(text, { header: true });
+                    const parsedData = data.data.filter(row => Object.keys(row).length > 1); // Filtrar filas vacías
+                    localStorage.setItem('csvData', JSON.stringify(parsedData)); // Guardar en localStorage
+                    displayTable(parsedData); // Mostrar en tabla
+                })
+                .catch(error => console.error('Error al cargar el CSV:', error));
+        }
+
         window.onload = function () {
             const currentUser = JSON.parse(localStorage.getItem('currentUser'));
             if (currentUser) {
@@ -868,55 +939,66 @@
         document.addEventListener('DOMContentLoaded', init);
 
     </script>
-
     <script>
-        var months2 = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
-        var homepageFeaturedPerMonth = new Array(12).fill(0);
-        var socialMediaPromoPerMonth = new Array(12).fill(0);
+        var categories = [...new Set(data.map(item => item.category))]; // Obtener todas las categorías únicas
+        var homepageFeaturedActualByCategory = {};
+        var socialMediaPromoActualByCategory = {};
 
-        // Agrupar los datos por mes para los canales promocionales
+        // Inicializar los arrays para cada categoría
+        categories.forEach(category => {
+            homepageFeaturedActualByCategory[category] = 0;
+            socialMediaPromoActualByCategory[category] = 0;
+        });
+
+        // Agrupar los datos por categoría solo para los pedidos (`num_orders`)
         data.forEach(item => {
-            var monthIndex = parseInt(item.month) - 1; // Convertir el mes a índice (0-11)
+            var category = item.category;
+
+            // Sumar valores para `num_orders`
             if (item.homepage_featured === "1") {
-                homepageFeaturedPerMonth[monthIndex] += parseInt(item.num_orders_predict);
+                homepageFeaturedActualByCategory[category] += parseInt(item.num_orders);
             }
             if (item.social_media_promotion === "1") {
-                socialMediaPromoPerMonth[monthIndex] += parseInt(item.num_orders_predict);
+                socialMediaPromoActualByCategory[category] += parseInt(item.num_orders);
             }
         });
 
-        // Configurar el gráfico de radar
+        // Preparar los datos para el gráfico de radar
+        var categoryLabels = categories; // Etiquetas para las categorías
+
+        // Configurar el gráfico de radar solo con los pedidos actuales
         var ctx = document.getElementById('promotionRadarChart').getContext('2d');
         var promotionRadarChart = new Chart(ctx, {
             type: 'radar',
             data: {
-                labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+                labels: categoryLabels, // Las categorías como etiquetas
                 datasets: [{
-                    label: 'Homepage Featured',
-                    data: homepageFeaturedPerMonth,
-                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                    borderColor: 'rgba(54, 162, 235, 1)',
+                    label: 'Homepage Featured - Actual',
+                    data: categories.map(category => homepageFeaturedActualByCategory[category]),
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
                     borderWidth: 2,
-                    pointBackgroundColor: 'rgba(54, 162, 235, 1)',
+                    pointBackgroundColor: 'rgba(75, 192, 192, 1)',
                     pointBorderColor: '#fff',
                     pointHoverBackgroundColor: '#fff',
-                    pointHoverBorderColor: 'rgba(54, 162, 235, 1)',
+                    pointHoverBorderColor: 'rgba(75, 192, 192, 1)',
                 }, {
-                    label: 'Social Media Promotion',
-                    data: socialMediaPromoPerMonth,
-                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                    borderColor: 'rgba(255, 99, 132, 1)',
+                    label: 'Social Media Promotion - Actual',
+                    data: categories.map(category => socialMediaPromoActualByCategory[category]),
+                    backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                    borderColor: 'rgba(153, 102, 255, 1)',
                     borderWidth: 2,
-                    pointBackgroundColor: 'rgba(255, 99, 132, 1)',
+                    pointBackgroundColor: 'rgba(153, 102, 255, 1)',
                     pointBorderColor: '#fff',
                     pointHoverBackgroundColor: '#fff',
-                    pointHoverBorderColor: 'rgba(255, 99, 132, 1)',
+                    pointHoverBorderColor: 'rgba(153, 102, 255, 1)',
                 }]
             },
             options: {
                 scale: {
                     ticks: {
-                        beginAtZero: true
+                        beginAtZero: true,
+                        max: 1000 // Ajustar la escala máxima a 1000
                     }
                 },
                 responsive: true,
@@ -1029,20 +1111,20 @@
             names.forEach((name, index) => {
                 var count = counts[index];
                 container.append(`
-                <div class="d-flex">
-                    <div class="avatar">
-                        <img src="assets/img/logoproduct.svg" alt="..." class="avatar-img rounded-circle" />
+                    <div class="d-flex">
+                        <div class="avatar">
+                            <img src="assets/img/logoproduct.svg" alt="..." class="avatar-img rounded-circle" />
+                        </div>
+                        <div class="flex-1 pt-1 ms-2">
+                            <h6 class="fw-bold mb-1">${name}</h6>
+                            <small class="text-muted">ID: ${index + 1}</small> <!-- Mostrar ID -->
+                        </div>
+                        <div class="d-flex ms-auto align-items-center">
+                            <h4 class="text-info fw-bold">+${count}</h4>
+                        </div>
                     </div>
-                    <div class="flex-1 pt-1 ms-2">
-                        <h6 class="fw-bold mb-1">${name}</h6>
-                        <small class="text-muted">ID: ${index + 1}</small> <!-- Mostrar ID -->
-                    </div>
-                    <div class="d-flex ms-auto align-items-center">
-                        <h4 class="text-info fw-bold">+${count}</h4>
-                    </div>
-                </div>
-                <div class="separator-dashed"></div>
-            `);
+                    <div class="separator-dashed"></div>
+                `);
             });
         }
 
@@ -1216,6 +1298,131 @@
         }
     </script>
 
+    <script>
+        // Inicializar las variables para almacenar los datos agrupados por storageType
+        var groupedBubbleData = {
+            STR_LMA: { x: Math.random() * 10, y: Math.random() * 10, r: 0 },
+            STR_LMS: { x: Math.random() * 10, y: Math.random() * 10, r: 0 },
+            STR_ARQ: { x: Math.random() * 10, y: Math.random() * 10, r: 0 }
+        };
+
+        // Agrupar los datos por storageType
+        data.forEach(item => {
+            var storageType = item.storage_type;
+            var numOrders = parseInt(item.num_orders);
+
+            // Acumular el número de órdenes en el radio
+            groupedBubbleData[storageType].r += numOrders;
+        });
+
+        // Crear los datasets para el gráfico de burbuja
+        var bubbleDatasets = Object.keys(groupedBubbleData).map(storageType => {
+            var data = groupedBubbleData[storageType];
+            return {
+                label: "Almacén " + storageType,
+                data: [{
+                    x: data.x,
+                    y: data.y,
+                    r: data.r / 500  // Dividir para ajustar el tamaño de las burbujas
+                }],
+                backgroundColor: storageType === 'STR_LMA' ? "rgba(113, 106, 202, 0.6)" :
+                    storageType === 'STR_LMS' ? "rgba(29, 122, 243, 0.6)" :
+                        "rgba(255, 99, 132, 0.6)"
+            };
+        });
+
+        // Crear el gráfico de burbuja
+        var ctx = document.getElementById('bubbleChart').getContext('2d');
+        var myBubbleChart = new Chart(ctx, {
+            type: 'bubble',
+            data: {
+                datasets: bubbleDatasets
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                legend: {
+                    position: 'bottom'
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }],
+                    xAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                },
+                tooltips: {
+                    callbacks: {
+                        label: function (tooltipItem, data) {
+                            var dataset = data.datasets[tooltipItem.datasetIndex];
+                            var dataItem = dataset.data[tooltipItem.index];
+                            return dataset.label + ' - ' + Math.round(dataItem.r * 700) + ' órdenes';
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
+    <script>
+        // Definir umbral de aciertos más amplio (20% de diferencia aceptable)
+        const ACCURACY_THRESHOLD = 0.55; // 20%
+
+        // Variables para los KPIs
+        let totalError = 0;
+        let totalEntries = 0;
+        let correctPredictions = 0;
+        let totalDeviation = 0;
+
+        // Función para calcular los KPIs
+        function calculateKPIs(data) {
+            data.forEach(item => {
+                const realValue = parseInt(item.num_orders);           // Valor real
+                const predictedValue = parseInt(item.num_orders_predict); // Valor predicho
+
+                // Evitar entradas con valor real o predicho igual a 0
+                if (realValue === 0 || predictedValue === 0) return;
+
+                // Calcular la tasa de error para este producto/almacén
+                const error = Math.abs((realValue - predictedValue) / realValue);
+                totalError += error;
+                totalEntries++;
+
+                // Calcular porcentaje de aciertos con umbral ajustado
+                const isAccurate = error <= ACCURACY_THRESHOLD;
+                if (isAccurate) {
+                    correctPredictions++;
+                }
+
+                // Calcular desviaciones del stock ideal
+                const deviation = realValue - predictedValue;
+                totalDeviation += deviation;
+            });
+
+            // Calcular KPIs
+            const averageErrorRate = (totalError / totalEntries) * 100; // Convertir a porcentaje
+            const accuracyPercentage = (correctPredictions / totalEntries) * 100; // Aciertos en porcentaje
+            const averageDeviation = totalDeviation / totalEntries; // Desviación promedio
+
+            return {
+                averageErrorRate: averageErrorRate.toFixed(2) + '%',
+                accuracyPercentage: accuracyPercentage.toFixed(2) + '%',
+                averageDeviation: averageDeviation.toFixed(2)
+            };
+        }
+
+        // Calcular los KPIs
+        const kpis = calculateKPIs(data);
+        // Opcional: Mostrar estos valores en el dashboard HTML
+        document.getElementById('errorRate').textContent = kpis.averageErrorRate;
+        document.getElementById('accuracyPercentage').textContent = kpis.accuracyPercentage;
+        document.getElementById('stockDeviation').textContent = kpis.averageDeviation;
+    </script>
 </body>
 
 </html>

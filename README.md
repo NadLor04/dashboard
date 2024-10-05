@@ -38,24 +38,32 @@ El proyecto consiste en una aplicación web que permite a los usuarios:
 │   ├── footer.html
 │   └── sidebar.html
 ├── data/
+│   ├── train.csv
+│   ├── test.csv
+│   ├── storage.csv
 │   ├── products.csv
-│   ├── Resultado_modelo_train.csv
-│   └── Resultado_modelo_val.csv
+│   ├── Resultado_train.csv
+│   └── Resultado_test.csv
 ├── 404.html
 ├── dashboard.html
-├── dashboard2.html
+├── storage.html
 ├── files.html
 ├── index.html
+├── main.html
 ├── nosotros.html
-├── productos.html
-├── app.js
+├── products.html
 
 
 ## Uso
 
+### Iniciar sesión
+En la pagina `index.html` se tiene un formulario para iniciar sesión, si no tiene una cuenta registrada puede dar click al botón 'Registrarme'.
+Aparecera un formulario con los campos nombre, correo, y contraseña, se validara si ya existe el correo registrado.
+Cuando inicie sesión con las credenciales correctas el sistema lo redigira a la página principal.
+
 ### Página Principal
 
-Al iniciar la aplicación, se muestra la página principal (`index.html`). Aquí puedes navegar a las diferentes secciones del proyecto.
+Al iniciar la aplicación, se muestra la página principal (`main.html`). Aquí puedes navegar a las diferentes secciones del proyecto.
 
 ### Subir y Visualizar CSV
 
@@ -66,7 +74,6 @@ Al iniciar la aplicación, se muestra la página principal (`index.html`). Aquí
 ### Dashboard de Resultados del Modelo Predictivo
 
 1. Abre `dashboard.html` en tu navegador web para ver los resultados del modelo predictivo aplicado a datos de entrenamiento.
-2. Abre `dashboard2.html` para ver los resultados del modelo predictivo aplicado a datos de validación.
 
 ### Sección "Nosotros"
 
@@ -75,14 +82,17 @@ Al iniciar la aplicación, se muestra la página principal (`index.html`). Aquí
 ### Sección "Productos"
 
 1. Abre `productos.html` en tu navegador web.
-2. Sube el archivo `products.csv` desde la interfaz.
-3. Los datos se mostrarán en una tabla interactiva donde puedes aplicar filtros y ordenar la información.
+2. Los datos se mostrarán en una tabla interactiva donde puedes aplicar filtros y ordenar la información.
+
+### Sección "Almacenes"
+
+1. Abre `storages.html` en tu navegador web.
+2. Los datos se mostrarán en una tabla simple.
 
 ## Instalación
 
-1. Clona o descarga este repositorio en tu máquina local.
+1. Clona o descarga este repositorio en tu máquina local usando git.
 
-   ```bash
    git clone https://github.com/NadLor04/dashboard.git 
 
 
